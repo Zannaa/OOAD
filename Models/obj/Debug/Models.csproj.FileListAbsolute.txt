@@ -1,0 +1,5 @@
+C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.dll
+C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.pdb
+C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.dll
+C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.pdb

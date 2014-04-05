@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Test
+    public class Obracun
     {
-        public int Test { get; set; }
-
-        public Test(int test)
-        {
-            this.Test = test;
-        }
     }
 }
