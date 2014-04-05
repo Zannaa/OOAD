@@ -19,6 +19,7 @@ namespace Models
         public int Sifra { get; set; }
         #endregion
 
+        #region Constructors
         /// <summary>
         /// Prazan konstruktor
         /// </summary>
@@ -66,5 +67,6 @@ namespace Models
             this.Ime = noviOK.Ime;
             this.Prezime = noviOK.Prezime;
         }
+        #endregion
     }
 }
