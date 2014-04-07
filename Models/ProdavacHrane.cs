@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Models
 {
-    class ProdavacHrane:Uposlenik
+    public class ProdavacHrane:Uposlenik
     {
         #region Properties
         /// <summary>

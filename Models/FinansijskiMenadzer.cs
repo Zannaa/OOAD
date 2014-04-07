@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class FinansijskiMenadzer:Uposlenik
+    public class FinansijskiMenadzer : Uposlenik
     {
         #region Properties
         /// <summary>

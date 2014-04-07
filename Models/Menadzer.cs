@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Menadzer:Uposlenik
+    public class Menadzer:Uposlenik
     {
         #region Properties
         /// <summary>
