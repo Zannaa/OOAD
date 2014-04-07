@@ -53,6 +53,7 @@
     <Compile Include="RadnoVrijeme.cs" />
     <Compile Include="Raspored.cs" />
     <Compile Include="Rezervacija.cs" />
+    <Compile Include="Rezervacijacs.cs" />
     <Compile Include="Sala.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
