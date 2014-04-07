@@ -40,15 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clan.cs" />
+    <Compile Include="Film.cs" />
     <Compile Include="Kupac.cs" />
     <Compile Include="ObicniKupac.cs" />
     <Compile Include="Obracun.cs" />
-    <Compile Include="PrehrambeniProdukt.cs" />
-    <Compile Include="ProdavacHrane.cs" />
+    <Compile Include="Projekcija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Racun.cs" />
     <Compile Include="RadnaEvidencija.cs" />
     <Compile Include="RadnoVrijeme.cs" />
+    <Compile Include="Raspored.cs" />
+    <Compile Include="Rezervacija.cs" />
+    <Compile Include="Sala.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
