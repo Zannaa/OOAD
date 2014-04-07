@@ -8,3 +8,6 @@ C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\bin\De
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\obj\Debug\Models.dll
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\obj\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Azra\Source\Repos\OOAD\Models\obj\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD\Models\obj\Debug\Models.pdb

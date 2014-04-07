@@ -41,9 +41,12 @@
   <ItemGroup>
     <Compile Include="Clan.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="FinansijskiMenadzer.cs" />
     <Compile Include="Kupac.cs" />
+    <Compile Include="Menadzer.cs" />
     <Compile Include="ObicniKupac.cs" />
     <Compile Include="Obracun.cs" />
+    <Compile Include="ProdavacKarata.cs" />
     <Compile Include="Projekcija.cs" />
     <Compile Include="PrehrambeniProdukt.cs" />
     <Compile Include="ProdavacHrane.cs" />
@@ -55,6 +58,8 @@
     <Compile Include="Rezervacija.cs" />
     <Compile Include="Rezervacijacs.cs" />
     <Compile Include="Sala.cs" />
+    <Compile Include="Uposlenik.cs" />
+    <Compile Include="Vratar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
