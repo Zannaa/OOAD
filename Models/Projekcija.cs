@@ -6,31 +6,17 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Projekcija
+    public class Projekcija
     {
+        #region Atributi
+        private int id;
         DateTime pocetak, kraj;
         Double cijena;
         Film film;
         Sala sala;
+        #endregion
 
-        /// <summary>
-        /// Projekcija
-        /// </summary>
-        /// <param name="npocetak"></param>
-        /// <param name="nkraj"></param>
-        /// <param name="ncijena"></param>
-        /// <param name="nfilm"></param>
-        /// <param name="nsala"></param>
-        public Projekcija(DateTime npocetak, DateTime nkraj, double ncijena, Film nfilm, Sala nsala)
-        {
-            pocetak = npocetak;
-            kraj = nkraj;
-            cijena = ncijena;
-
-            sala = nsala;
-
-        }
-
+        #region Properties
         /// <summary>
         /// Pocetak projekcije
         /// </summary>
@@ -40,6 +26,14 @@ namespace Models
             set { pocetak = value; }
         }
 
+        /// <summary>
+        /// ID Filma
+        /// </summary>
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         /// <summary>
         /// Kraj projekcije
@@ -68,6 +62,66 @@ namespace Models
             get { return sala; }
             set { sala = value; }
         }
+        #endregion
 
+        #region Constructors
+        /// <summary>
+        /// Konstruktor klase Projekcija bez id-a
+        /// </summary>
+        /// <param name="pocetak">Pocetak projekcije</param>
+        /// <param name="kraj">Kraj projekcije</param>
+        /// <param name="cijena">Cijena projekcije</param>
+        /// <param name="film">Naziv filma</param>
+        /// <param name="sala">Sala projekcije</param>
+        public Projekcija(DateTime pocetak, DateTime kraj, double cijena, Film film, Sala sala)
+        {
+            this.pocetak = pocetak;
+            this.kraj = kraj;
+            this.cijena = cijena;
+
+           this. sala = sala;
+
+        }
+        /// <summary>
+        /// Konstruktor klase Projekcija bez parametara
+        /// </summary>
+        public Projekcija() { }
+       
+        
+        /// <summary>
+        /// Konstruktor klase Projekcija sa id-om
+        /// </summary>
+        /// <param name="id">Id projekcije</param>
+        /// <param name="pocetak">Pocetak projekcije</param>
+        /// <param name="kraj">Kraj projekcije</param>
+        /// <param name="cijena">Cijena projekcije</param>
+        /// <param name="film">Film</param>
+        /// <param name="sala">Sala projekcije</param>
+        public Projekcija(int id,DateTime pocetak, DateTime kraj, double cijena, Film film, Sala sala) {
+            this.id = id;
+            this.pocetak = pocetak;
+            this.kraj = kraj;
+            this.cijena = cijena;
+
+            this.sala = sala;
+        }
+
+        /// <summary>
+        /// Konstruktor klase Projekcija koji prima instancu klase Projekcija
+        /// </summary>
+        /// <param name="p">Instanca klase Projekcija</param>
+        public Projekcija(Projekcija p ) {
+            this.id = p.id;
+            this.pocetak = p.pocetak;
+            this.kraj =p.kraj;
+            this.cijena = p.cijena;
+
+            this.sala = p.sala;
+        
+        }
+
+        #endregion
+
+      
     }
 }

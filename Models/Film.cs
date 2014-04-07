@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class Film
-    { 
+    public class Film
+    {
+        #region Atributi
+        private int id;
         string naziv;
-        string sifra;
+        int sifra;
+        #endregion
 
-     /// <summary>
-     /// Sifra filma
-     /// </summary>
+        #region Properties
+        /// <summary>
+        /// ID Filma
+        /// </summary>
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-      public string  Sifra
+        /// <summary>
+        /// Sifra filma
+        /// </summary>
+
+        public int Sifra
         {
             get { return sifra; }
             set { sifra = value; }
@@ -23,22 +36,55 @@ namespace Models
         /// <summary>
         /// Naziv filma
         /// </summary>
-      public string Naziv
+        public string Naziv
         {
             get { return naziv; }
             set { naziv = value; }
         }
-       /// <summary>
-       /// Film
-       /// </summary>
-       /// <param name="nnaziv"></param>
-       /// <param name="nsifra"></param>
- 
-     public Film(string nnaziv, string nsifra)
+        #endregion
+
+        # region Constructors
+    /// <summary>
+    /// Konstruktor klase Film bez id-a
+    /// </summary>
+    /// <param name="naziv">Naziv filma</param>
+    /// <param name="sifra">Sifra film-a</param>
+        public Film(string naziv, int sifra)
         {
-            naziv = nnaziv;
-            sifra = nsifra;
+            this.naziv = naziv;
+            this.sifra = sifra;
         }
 
+        /// <summary>
+        /// Prazan konstruktor klase Film 
+        /// </summary>
+        public Film() { }
 
+        /// <summary>
+        /// Konstruktor Film sa id-om
+        /// </summary>
+        /// <param name="id">Id filma</param>
+        /// <param name="naziv">Naziv filma</param>
+        /// <param name="sifra">Sifra filma</param>
+        public Film(int id, string naziv, int sifra)
+        {
+            this.id = id;
+            this.naziv = naziv;
+            this.sifra =sifra;
+
+        }
+        /// <summary>
+        /// Konstruktor klase Film koji prima instancu klase Film
+        /// </summary>
+        /// <param name="f">instanca klase Film</param>
+        public Film(Film f) {
+            this.id = f.id;
+            this.naziv = f.naziv;
+            this.sifra = f.sifra;
+
+        
+        }
+        #endregion 
+
+    }
 }
