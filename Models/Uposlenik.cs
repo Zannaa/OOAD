@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Uposlenik
+    public abstract class Uposlenik
     {
         /// <summary>
         /// Ime uposlenika
