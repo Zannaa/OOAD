@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Karta
+    public class Karta : Faktura
     {
         #region Properties
         /// <summary>
@@ -34,11 +34,17 @@ namespace Models
         /// <summary>
         /// Konstruktor
         /// </summary>
+        /// <param name="sifra">ID fakture</param>
+        /// <param name="vrijeme">Vrijeme izdavanja</param>
+        /// <param name="menadzer">Menadzer koji je odobrio fakturu</param>
         /// <param name="prodavac">Klasa prodavaca karte</param>
         /// <param name="kupac">Kupac karte</param>
         /// <param name="termin">Termin filma</param>
-        public Karta(ProdavacKarata prodavac, Kupac kupac, Projekcija termin )
+        public Karta(int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin )
         {
+            this.Sifra = sifra;
+            this.Vrijeme = vrijeme;
+            this.Menadzer = menadzer;
             this.Prodavac = prodavac;
             this.Kupac = kupac;
             this.Termin = termin;
