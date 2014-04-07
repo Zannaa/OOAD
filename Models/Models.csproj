@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clan.cs" />
+    <Compile Include="Faktura.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="FinansijskiMenadzer.cs" />
+    <Compile Include="Karta.cs" />
     <Compile Include="Kupac.cs" />
     <Compile Include="Menadzer.cs" />
     <Compile Include="ObicniKupac.cs" />
@@ -56,7 +58,6 @@
     <Compile Include="RadnoVrijeme.cs" />
     <Compile Include="Raspored.cs" />
     <Compile Include="Rezervacija.cs" />
-    <Compile Include="Rezervacijacs.cs" />
     <Compile Include="Sala.cs" />
     <Compile Include="Uposlenik.cs" />
     <Compile Include="Vratar.cs" />
