@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClanDAO.cs" />
     <Compile Include="FilmDAO.cs" />
     <Compile Include="FinansijskiMenadzerDAO.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
