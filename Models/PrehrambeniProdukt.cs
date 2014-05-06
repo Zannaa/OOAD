@@ -9,6 +9,8 @@ namespace Models
     public class PrehrambeniProdukt
     {
         #region Properties
+
+        public int ID { get; set; }
         /// <summary>
         /// Tip produkta
         /// </summary>
@@ -33,8 +35,9 @@ namespace Models
         /// </summary>
         /// <param name="tip">Tip produkta</param>
         /// <param name="cijena">Cijena produkta</param>
-        public PrehrambeniProdukt(string tip, double cijena)
+        public PrehrambeniProdukt(int id, string tip, double cijena)
         {
+            this.ID = id; 
             this.Tip = tip;
             this.Cijena = cijena;
         }
