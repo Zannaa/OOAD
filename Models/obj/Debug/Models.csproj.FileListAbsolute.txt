@@ -16,3 +16,8 @@ C:\Users\Adna\Source\Repos\OOAD4\Models\bin\Debug\Models.pdb
 C:\Users\Adna\Source\Repos\OOAD4\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Adna\Source\Repos\OOAD4\Models\obj\Debug\Models.dll
 C:\Users\Adna\Source\Repos\OOAD4\Models\obj\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD3\Models\bin\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD3\Models\bin\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.pdb
