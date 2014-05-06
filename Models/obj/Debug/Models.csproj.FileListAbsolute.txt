@@ -21,3 +21,8 @@ C:\Users\Azra\Source\Repos\OOAD3\Models\bin\Debug\Models.pdb
 C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.dll
 C:\Users\Azra\Source\Repos\OOAD3\Models\obj\Debug\Models.pdb
+C:\Users\Zana Tatar\Desktop\new3\OOAD\Models\bin\Debug\Models.dll
+C:\Users\Zana Tatar\Desktop\new3\OOAD\Models\bin\Debug\Models.pdb
+C:\Users\Zana Tatar\Desktop\new3\OOAD\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Zana Tatar\Desktop\new3\OOAD\Models\obj\Debug\Models.dll
+C:\Users\Zana Tatar\Desktop\new3\OOAD\Models\obj\Debug\Models.pdb
