@@ -48,6 +48,7 @@
     <Compile Include="ProdavacHraneDAO.cs" />
     <Compile Include="ProdavacKarataDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VratarDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

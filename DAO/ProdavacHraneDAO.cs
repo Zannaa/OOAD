@@ -23,13 +23,13 @@ namespace DAO
 
         public long create(ProdavacHrane prodavacHrane)
         {
-            string exec = "INSERT INTO finansijskiMenadzer VALUES(" + prodavacHrane.Pult + "', " + prodavacHrane.Ime + ", '" + prodavacHrane.Prezime + "', " + prodavacHrane.Jmbg + ", '" + prodavacHrane.Id_uposlenika + "', " + prodavacHrane.Koeficijent + ")";
+            string exec = "INSERT INTO prodavacHrane VALUES(" + prodavacHrane.Pult + "', " + prodavacHrane.Ime + ", '" + prodavacHrane.Prezime + "', " + prodavacHrane.Jmbg + ", '" + prodavacHrane.Id_uposlenika + "', " + prodavacHrane.Koeficijent + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
         }
 
-        public ProdavacHrane read(ProdavacHrane prodavacHrane
+        public ProdavacHrane read(ProdavacHrane prodavacHrane)
         {
 
             return getById(prodavacHrane.Id_uposlenika);

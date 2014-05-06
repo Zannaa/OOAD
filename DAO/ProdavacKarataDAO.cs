@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(ProdavacKarata prodavacKarata)
         {
-            string exec = "INSERT INTO finansijskiMenadzer VALUES(" + prodavacKarata.Telefon + "', " + prodavacKarata.Ime + ", '" + prodavacKarata.Prezime + "', " + prodavacKarata.Jmbg + ", '" + prodavacKarata.Id_uposlenika + "', " + prodavacKarata.Koeficijent + ")";
+            string exec = "INSERT INTO prodavacKarata VALUES(" + prodavacKarata.Telefon + "', " + prodavacKarata.Ime + ", '" + prodavacKarata.Prezime + "', " + prodavacKarata.Jmbg + ", '" + prodavacKarata.Id_uposlenika + "', " + prodavacKarata.Koeficijent + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
