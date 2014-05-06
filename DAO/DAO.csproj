@@ -43,6 +43,7 @@
     <Compile Include="FilmDAO.cs" />
     <Compile Include="FinansijskiMenadzerDAO.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="ProdavacKarataDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
