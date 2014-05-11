@@ -7,3 +7,12 @@ C:\Users\Zana Tatar\Desktop\new3\OOAD\DAO\bin\Debug\Models.pdb
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAO\obj\Debug\DAO.dll
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAO\obj\Debug\DAO.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Adnan\Source\Repos\OOAD\DAO\obj\Debug\DAO.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAO\obj\Debug\DAO.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\DAO.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\DAO.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\DAL.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\Models.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\DAL.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAO\bin\Debug\Models.pdb

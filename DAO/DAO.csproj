@@ -48,7 +48,9 @@
     <Compile Include="PrehrambeniProduktDao.cs" />
     <Compile Include="ProdavacHraneDAO.cs" />
     <Compile Include="ProdavacKarataDAO.cs" />
+    <Compile Include="ProjekcijaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RacunDAO.cs" />
     <Compile Include="VratarDAO.cs" />
   </ItemGroup>
   <ItemGroup>

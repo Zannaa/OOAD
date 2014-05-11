@@ -43,7 +43,7 @@ namespace DAO
             int id = menadzer.Id_uposlenika;
             double koeficijent = menadzer.Koeficijent;
 
-            string exec = "UPDATE menadzer SET telefon = " + telefon + "telefon, ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
+            string exec = "UPDATE menadzer SET telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
             exec += " WHERE id = " + id;
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return menadzer;
