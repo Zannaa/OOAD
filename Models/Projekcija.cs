@@ -61,7 +61,17 @@ namespace Models
         {
             get { return sala; }
             set { sala = value; }
+
+
         }
+
+        public double Cijena { 
+        get { return cijena; }
+            set { cijena = value; }
+        
+        
+        }
+
         #endregion
 
         #region Constructors
