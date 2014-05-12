@@ -8,6 +8,7 @@ namespace Models
 {
     public abstract class Kupac
     {
+        #region Properties
         /// <summary>
         /// Ime kupca
         /// </summary>
@@ -17,5 +18,7 @@ namespace Models
         /// Prezime kupca
         /// </summary>
         public string Prezime { get; set; }
+        #endregion
+        public Kupac() { }
     }
 }

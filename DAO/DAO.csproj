@@ -43,6 +43,7 @@
     <Compile Include="FilmDAO.cs" />
     <Compile Include="FinansijskiMenadzerDAO.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="KartaDAO.cs" />
     <Compile Include="MenadzerDAO.cs" />
     <Compile Include="ObicniKupacDao.cs" />
     <Compile Include="PrehrambeniProduktDao.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="ProjekcijaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RacunDAO.cs" />
+    <Compile Include="RadnoVrijemeDAO.cs" />
     <Compile Include="VratarDAO.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -43,7 +43,9 @@ namespace Models
         /// <param name="kraj">Kraj radnog vremena</param>
         public RadnoVrijeme(int id, DateTime pocetak, DateTime kraj)
         {
-
+            this.Id = id;
+            this.Pocetak = pocetak;
+            this.Kraj = kraj;
         }
 
         /// <summary>
@@ -53,7 +55,8 @@ namespace Models
         /// <param name="kraj">Kraj radnog vremena</param>
         public RadnoVrijeme(DateTime pocetak, DateTime kraj)
         {
-
+            this.Pocetak = pocetak;
+            this.Kraj = kraj;
         }
 
         /// <summary>
