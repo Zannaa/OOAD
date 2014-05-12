@@ -31,16 +31,17 @@ namespace DAO
 
         public Projekcija update(Projekcija projekcija)
         {
-            // buildamo query
-            //StringBuilder QueryBuilder = new StringBuilder();
-            //QueryBuilder.Append("UPDATE Projekcija AS p, Film AS f, Sala AS s ");
-            //QueryBuilder.Append("SET p.Pocetak = " + projekcija.Pocetak + ", ");
-            //QueryBuilder.Append("p.Kraj = " + projekcija.Kraj + ", ");
-            //QueryBuilder.Append("p.Cijena = " + projekcija + ", ");
-            //QueryBuilder.Append("p.")
-            //    )
+          
+            StringBuilder QueryBuilder = new StringBuilder();
+            QueryBuilder.Append("UPDATE Projekcija AS p, Film AS f, Sala AS s  WHERE p.");
+            QueryBuilder.Append("SET p.Pocetak = " + projekcija.Pocetak + ", ");
+            QueryBuilder.Append("p.Kraj = " + projekcija.Kraj + ", ");
+            QueryBuilder.Append("p.Cijena = " + projekcija.Cijena + ", ");
+            QueryBuilder.Append("p.FilmID =" + projekcija.Film.ID + ", ") ;
+            QueryBuilder.Append("p.SalaID="+ projekcija.Sala.ID+ ", ") ;
+            QueryBuilder.Append("p.ID ="+projekcija.ID) ;
 
-            // fali property Cijena
+         
             throw new NotImplementedException();
         }
 
