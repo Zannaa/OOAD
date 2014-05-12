@@ -10,7 +10,7 @@ namespace Models
     {
         #region Properties
 
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Tip produkta
         /// </summary>
@@ -31,16 +31,38 @@ namespace Models
 
         }
         /// <summary>
-        /// Konstruktor klase PrehrambeniProdukt
+        /// Konstruktor klase PrehrambeniProdukt sa id
         /// </summary>
         /// <param name="tip">Tip produkta</param>
         /// <param name="cijena">Cijena produkta</param>
         public PrehrambeniProdukt(int id, string tip, double cijena)
         {
-            this.ID = id; 
+            this.Id = id; 
             this.Tip = tip;
             this.Cijena = cijena;
         }
+
+        /// <summary>
+        /// Konstruktor klase PrehrambeniProdukt bez id
+        /// </summary>
+        /// <param name="tip">Tip produkta</param>
+        /// <param name="cijena">Cijena produkta</param>
+        public PrehrambeniProdukt(string tip, double cijena)
+        {
+            this.Tip = tip;
+            this.Cijena = cijena;
+        }
+        /// <summary>
+        /// Konstruktor koji prima instancu klase PrehrambeniProdukt
+        /// </summary>
+        /// <param name="p">Instanca klase</param>
+        public PrehrambeniProdukt(PrehrambeniProdukt p)
+        {
+            this.Id = p.Id;
+            this.Tip = p.Tip;
+            this.Cijena = p.Cijena;
+        }
         #endregion
+
     }
 }

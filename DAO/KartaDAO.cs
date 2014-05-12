@@ -41,7 +41,7 @@ namespace DAO
 
         public void delete(Karta karta)
         {
-            int id = karta.ID;
+            int id = karta.Id;
 
 
             int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM menadzer WHERE id = " + id);

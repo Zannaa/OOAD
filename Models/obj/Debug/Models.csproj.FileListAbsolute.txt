@@ -31,3 +31,5 @@ C:\Users\Adna\Source\Repos\OOADnovo\Models\bin\Debug\Models.pdb
 C:\Users\Adna\Source\Repos\OOADnovo\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Adna\Source\Repos\OOADnovo\Models\obj\Debug\Models.dll
 C:\Users\Adna\Source\Repos\OOADnovo\Models\obj\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD\Models\bin\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD\Models\bin\Debug\Models.pdb

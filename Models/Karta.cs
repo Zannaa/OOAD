@@ -24,7 +24,6 @@ namespace Models
         /// <summary>
         /// ID Karte
         /// </summary>
-        public int ID { get; set; }
         #endregion
 
         #region Constructors
@@ -38,37 +37,40 @@ namespace Models
         /// <summary>
         /// Konstruktor Karta bez id-a
         /// </summary>
-        /// <param name="sifra">ID fakture</param>
+        /// <param name="sifra">Sifra fakture</param>
         /// <param name="vrijeme">Vrijeme izdavanja</param>
         /// <param name="menadzer">Menadzer koji je odobrio fakturu</param>
         /// <param name="prodavac">Klasa prodavaca karte</param>
         /// <param name="kupac">Kupac karte</param>
         /// <param name="termin">Termin filma</param>
-        public Karta(int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Projekcija termin )
+        public Karta(int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin )
         {
             this.Sifra = sifra;
             this.Vrijeme = vrijeme;
             this.Menadzer = menadzer;
             this.Prodavac = prodavac;
+            this.Kupac = kupac;
             this.Termin = termin;
 
         }
         /// <summary>
         /// Konstruktor Karta sa id-om
         /// </summary>
-        /// <param name="sifra">ID fakture</param>
+        /// <param name="id">Id karte</param>
+        /// <param name="sifra">Sifra fakture</param>
         /// <param name="vrijeme">Vrijeme izdavanja</param>
         /// <param name="menadzer">Menadzer koji je odobrio fakturu</param>
         /// <param name="prodavac">Klasa prodavaca karte</param>
         /// <param name="kupac">Kupac karte</param>
         /// <param name="termin">Termin filma</param>
-        public Karta(int id, int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Projekcija termin)
+        public Karta(int id, int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin)
         {
-            this.ID = id;
+            this.Id = id;
             this.Sifra = sifra;
             this.Vrijeme = vrijeme;
             this.Menadzer = menadzer;
             this.Prodavac = prodavac;
+            this.Kupac = kupac;
             this.Termin = termin;
 
         }
@@ -78,7 +80,7 @@ namespace Models
         /// <param name="p">Instanca klase Karta</param>
         public Karta(Karta k)
         {
-            this.ID = k.ID;
+            this.Id = k.Id;
             this.Sifra = k.Sifra;
             this.Vrijeme = k.Vrijeme;
             this.Menadzer = k.Menadzer;

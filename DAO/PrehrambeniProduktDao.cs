@@ -54,7 +54,7 @@ namespace DAO
 
         public void delete(PrehrambeniProdukt produkt)
         {
-            int id = produkt.ID;
+            int id = produkt.Id;
 
 
             int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM film WHERE id = " + id);
