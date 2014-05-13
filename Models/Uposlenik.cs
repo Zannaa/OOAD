@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public abstract class Uposlenik
+    public class Uposlenik
     {
         /// <summary>
         /// Ime uposlenika
@@ -32,5 +32,22 @@ namespace Models
         /// Koeficijent
         /// </summary>
         public double Koeficijent { get; set; }
+
+        public Uposlenik()
+        {
+
+        }
+        // morala sam ovdje da maknem da je Uposlenik apstraktna klasa
+        //i da napravim konstruktor, jer mi treba instanca Uposlenika
+        // u DAO
+        public Uposlenik(string ime, string prezime, string jmbg, int id, double koeficijent)
+        {
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.Jmbg = jmbg;
+            this.Id_uposlenika = id;
+            this.Koeficijent = koeficijent;
+        }
+
     }
 }

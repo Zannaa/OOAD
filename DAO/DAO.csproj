@@ -46,6 +46,7 @@
     <Compile Include="KartaDAO.cs" />
     <Compile Include="MenadzerDAO.cs" />
     <Compile Include="ObicniKupacDao.cs" />
+    <Compile Include="ObracunDAO.cs" />
     <Compile Include="PrehrambeniProduktDao.cs" />
     <Compile Include="ProdavacHraneDAO.cs" />
     <Compile Include="ProdavacKarataDAO.cs" />
