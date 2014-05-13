@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RacunDAO.cs" />
     <Compile Include="RadnoVrijemeDAO.cs" />
+    <Compile Include="SalaDAO.cs" />
     <Compile Include="VratarDAO.cs" />
   </ItemGroup>
   <ItemGroup>
