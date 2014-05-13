@@ -67,7 +67,7 @@ namespace DAO
 
             // pročitamo rezultate
             foreach (DataRow dataRow in data.Tables[0].Rows)
-            {
+            {   
                 Projekcija projekcija = new Projekcija(
                     Convert.ToInt32(dataRow["Id"]),
                     Convert.ToDateTime(dataRow["Pocetak"]),
@@ -131,6 +131,13 @@ namespace DAO
             return projekcije;
         }
 
+        public void delete(Rezervacija rezervacija)
+        {
+            int id = rezervacija.ID;
+
+
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM rezervacija WHERE id = " + id);
+        }
 
     }
 }
