@@ -33,13 +33,13 @@ namespace DAO
         {
           
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("UPDATE Projekcija AS p, Film AS f, Sala AS s  WHERE p.");
+            QueryBuilder.Append("UPDATE Projekcija AS p, Film AS f, Sala AS s  ");
             QueryBuilder.Append("SET p.Pocetak = " + projekcija.Pocetak + ", ");
             QueryBuilder.Append("p.Kraj = " + projekcija.Kraj + ", ");
             QueryBuilder.Append("p.Cijena = " + projekcija.Cijena + ", ");
             QueryBuilder.Append("p.FilmID =" + projekcija.Film.ID + ", ") ;
             QueryBuilder.Append("p.SalaID="+ projekcija.Sala.ID+ ", ") ;
-            QueryBuilder.Append("p.ID ="+projekcija.ID) ;
+            QueryBuilder.Append("WHERE p.ID ="+projekcija.ID) ;
 
          
             throw new NotImplementedException();
