@@ -23,7 +23,7 @@ namespace DAL
         // instanciranje ove klase, nego će se dobavljati preko accessora instance property
         private DatabaseManager()
         {
-            ConnectionString = "...";
+            ConnectionString = "Data Source=(LocalDB)\\v11.0; Initial Catalog=Baza; Integrated Security=True;Pooling=False";
             connection = new SqlConnection(ConnectionString);
         }
 

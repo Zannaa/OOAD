@@ -20,8 +20,14 @@ namespace DAO
         }
 
         public long create(Projekcija projekcija)
+
         {
-            throw new NotImplementedException();
+            
+         
+
+            string exec = "INSERT INTO projekcija VALUES(" + projekcija.ID + ", " + projekcija.Pocetak + ", " + projekcija.Kraj + "," + projekcija.Cijena+ " ,"+ projekcija.Sala+","+projekcija.Film + ")";
+
+            return manager.ExecuteSqlCommandToIntForCreate(exec);
         }
 
         public Projekcija read(Projekcija p)
@@ -41,8 +47,8 @@ namespace DAO
             QueryBuilder.Append("p.SalaID="+ projekcija.Sala.ID+ ", ") ;
             QueryBuilder.Append("WHERE p.ID ="+projekcija.ID) ;
 
-         
-            throw new NotImplementedException();
+
+            return projekcija;
         }
 
         public void delete(Projekcija projekcija)

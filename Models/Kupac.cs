@@ -14,10 +14,21 @@ namespace Models
         /// </summary>
         public string Ime { get; set; }
 
+
         /// <summary>
         /// Prezime kupca
         /// </summary>
         public string Prezime { get; set; }
+
+        /// <summary>
+        /// Id klase ObicniKupac
+        /// </summary>
+        public int ID { get; set; }
+        /// <summary>
+        /// Sifra evidencije kupca
+        /// </summary>
+        public int Sifra { get; set; }
+
         #endregion
         public Kupac() { }
     }

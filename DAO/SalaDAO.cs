@@ -103,10 +103,7 @@ namespace DAO
 
         }
 
-        public Sala read(Sala s)
-        {
-            return getById(s.ID);
-        }
+      
 
 
        

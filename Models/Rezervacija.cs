@@ -9,7 +9,7 @@ namespace Models
     public class Rezervacija
     {
         #region Atributi
-        // private Kupac rezervisao;
+        private Kupac rezervisao;
         private int id;
         private Projekcija projekcija;
         private int sjediste;
@@ -38,11 +38,11 @@ namespace Models
 
 
 
-        /*  public Kupac Rezervisao
+          public Kupac Rezervisao
         {
             get { return rezervisao; }
             set { rezervisao = value; }
-        } */
+        } 
         
 
 
@@ -62,9 +62,9 @@ namespace Models
         /// </summary>
         /// <param name="projekcija">Projekcija</param>
         /// <param name="sjediste">Broj sjedišta</param>
-        public Rezervacija(Projekcija projekcija, int sjediste)
+        public Rezervacija(Projekcija projekcija,Kupac k, int sjediste)
         {
-            // kupac = k;
+             this.rezervisao = k;
             this.projekcija = projekcija;
             this.sjediste = sjediste;
 
@@ -81,10 +81,12 @@ namespace Models
         /// <param name="id">Id rezervacije</param>
         /// <param name="projekcija">Projekcija</param>
         /// <param name="sjediste">Broj sjedista</param>
-        public Rezervacija(int id, Projekcija projekcija, int sjediste)
-        {
+        public Rezervacija(int id, Projekcija projekcija, Kupac kupac, int sjediste)
+        { 
+            
             this.id = id;
             this.projekcija = projekcija;
+            this.rezervisao= kupac;
             this.sjediste = sjediste;
 
         }
@@ -93,8 +95,10 @@ namespace Models
         /// </summary>
         /// <param name="r">Instanca klase Rezervacija</param>
         public Rezervacija(Rezervacija r)
-        {
+        {   
+
             this.id = r.id;
+            this.rezervisao=r.rezervisao; 
             this.projekcija = r.projekcija;
             this.sjediste = r.sjediste;
 

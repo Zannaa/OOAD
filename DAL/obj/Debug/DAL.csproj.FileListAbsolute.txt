@@ -13,3 +13,7 @@ C:\Users\Adna\Source\Repos\OOADnovo\DAL\bin\Debug\DAL.pdb
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\obj\Debug\DAL.dll
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\obj\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\new3\OOAD\OOAD\DAL\bin\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\new3\OOAD\OOAD\DAL\bin\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\new3\OOAD\OOAD\DAL\obj\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\new3\OOAD\OOAD\DAL\obj\Debug\DAL.pdb

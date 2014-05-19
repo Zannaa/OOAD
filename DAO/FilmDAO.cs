@@ -59,7 +59,7 @@ namespace DAO
         public Film getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM film where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM dbo.Film where id = " + id);
 
             foreach(DataRow dataRow in data.Tables[0].Rows)
             {

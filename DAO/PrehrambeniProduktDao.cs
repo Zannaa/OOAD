@@ -24,7 +24,7 @@ namespace DAO
 
         public long create(PrehrambeniProdukt produkt)
         {
-            string exec = "INSERT INTO produkt VALUES( '" + produkt.Tip + "', " + produkt.Cijena + ")";
+            string exec = "INSERT INTO produkt VALUES( "+produkt.Id+", '"+ produkt.Tip + "', " + produkt.Cijena + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -32,11 +32,11 @@ namespace DAO
 
         public PrehrambeniProdukt read(PrehrambeniProdukt produkt)
         {
-            /* // wat?
-            
-             PrehrambeniProdukt produkt=getById(produkt.ID) */
 
-            return produkt;
+
+            PrehrambeniProdukt p = getById(produkt.Id);
+
+            return p;
         }
 
         public PrehrambeniProdukt update(PrehrambeniProdukt produkt)
@@ -45,8 +45,8 @@ namespace DAO
             double cijena = produkt.Cijena;
 
 
-            string exec = "UPDATE produkt SET tip = '" + tip + "'naziv, cijena = " + cijena;
-            //  exec += " WHERE id = " + id; dodati id u klasu
+            string exec = "UPDATE produkt SET tip = '" + tip + "', cijena = " + cijena;
+            exec += " WHERE id = " + produkt.Id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return produkt;

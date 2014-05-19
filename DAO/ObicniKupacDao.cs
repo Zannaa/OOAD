@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(ObicniKupac ObicniKupac)
         {
-            string exec = "INSERT INTO ObicniKupac VALUES(" + ObicniKupac.Id + ", " + ObicniKupac.Sifra + ", " + ", '" + ObicniKupac.Ime + "', '" + ObicniKupac.Prezime + "', " + ")";
+            string exec = "INSERT INTO ObicniKupac VALUES(" + ObicniKupac.Id  + ", '" + ObicniKupac.Ime + "', '" + ObicniKupac.Prezime + "', '" + ObicniKupac.Sifra+"' )";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 

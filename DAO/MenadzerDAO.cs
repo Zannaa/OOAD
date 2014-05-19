@@ -22,8 +22,7 @@ namespace DAO
 
         public long create(Menadzer menadzer)
         {
-            string exec = "INSERT INTO menadzer VALUES(" + menadzer.Telefon + ", '" + menadzer.Ime + "', " + menadzer.Prezime + "', " + menadzer.Jmbg + "', " + menadzer.Id_uposlenika + "', " + menadzer.Koeficijent + ")";
-
+            string exec = "INSERT INTO uposlenik VALUES(" + menadzer.Id_uposlenika + "', " +menadzer.Ime + ", '" + menadzer.Prezime + "', " + menadzer.Jmbg + ", " + menadzer.Koeficijent + "," + null+" , " +null+" , " + menadzer.Telefon+" , "+ null + ")";
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
         }

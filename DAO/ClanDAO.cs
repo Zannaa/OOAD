@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(Clan clan)
         {
-            string exec = "INSERT INTO clan VALUES(" + clan.Id + ", " + clan.Sifra + ", " + clan.Clanstvo + ", '" + clan.Ime + "', '" + clan.Prezime + "', " + ")";
+            string exec = "INSERT INTO clan VALUES(" + clan.Id + ", " + clan.Sifra + ", " + clan.Clanstvo + ", '" + clan.Ime + "', '" + clan.Prezime +  ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 

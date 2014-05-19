@@ -23,7 +23,7 @@ namespace DAO
  
         public long create(FinansijskiMenadzer finansijskiMenadzer)
         {
-            string exec = "INSERT INTO finansijskiMenadzer VALUES(" + finansijskiMenadzer.Budzet + ", '" + finansijskiMenadzer.Telefon + "', " + finansijskiMenadzer.Ime + ", '" + finansijskiMenadzer.Prezime + "', "+finansijskiMenadzer.Jmbg +", '" + finansijskiMenadzer.Id_uposlenika + "', " + finansijskiMenadzer.Koeficijent+  ")";
+            string exec = "INSERT INTO uposlenik VALUES(" + finansijskiMenadzer.Id_uposlenika  + "', " + finansijskiMenadzer.Ime + ", '" + finansijskiMenadzer.Prezime + "', "+finansijskiMenadzer.Jmbg +", "  + finansijskiMenadzer.Koeficijent+ ","+null+null+null+finansijskiMenadzer.Budzet+ ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -45,7 +45,7 @@ namespace DAO
             int id = finansijskiMenadzer.Id_uposlenika;
             double koeficijent = finansijskiMenadzer.Koeficijent;
 
-            string exec = "UPDATE finansijskiMenadzer SET budzet = " + budzet + "budzet, telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id +"', koeficijent = " + koeficijent;
+            string exec = "UPDATE finansijskiMenadzer SET budzet = " + budzet + ", telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id +"', koeficijent = " + koeficijent;
             exec += " WHERE id = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
@@ -69,13 +69,13 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 FinansijskiMenadzer finansijskiMenadzer = new FinansijskiMenadzer(
-                    Convert.ToDouble(dataRow["budzet"]),
-                    Convert.ToString(dataRow["telefon"]),
-                    Convert.ToString(dataRow["ime"]),
-                    Convert.ToString(dataRow["prezime"]),
-                    Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["id"]),
-                    Convert.ToDouble(dataRow["koeficijent"])
+                    Convert.ToDouble(dataRow["Budzet"]),
+                    Convert.ToString(dataRow["Telefon"]),
+                    Convert.ToString(dataRow["Ime"]),
+                    Convert.ToString(dataRow["Prezime"]),
+                    Convert.ToString(dataRow["Jmbg"]),
+                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToDouble(dataRow["Koeficijent"])
                 );
 
                 return finansijskiMenadzer;
