@@ -1,9 +1,28 @@
 ﻿<Window x:Class="DejaView.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Grid HorizontalAlignment="Left" Height="153" Margin="140,121,0,0" VerticalAlignment="Top" Width="275"/>
-
+        Title="MainWindow" Height="450" Width="346">
+    <Grid Margin="0,0,-34,-65" Height="432" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="253*"/>
+            <ColumnDefinition Width="227*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Left" Height="115" Margin="65,19,0,0" VerticalAlignment="Top" Width="169" Grid.ColumnSpan="2"/>
+        <Image Source="images.bmp" Margin="146,-89,74,287" Grid.ColumnSpan="2"    />
+        <Label Content="    DejaView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,10,0,0" Width="93"/>
+        <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,140,0,0"/>
+        <Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,108,0,0"/>
+        <GroupBox Header="Unos podataka" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="408" Width="315" Margin="10,-45,0,0">
+            <GroupBox Header="Uposlenik" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="305" Margin="0,210,-2,0">
+                <RadioButton Content="Prodavač karata" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="106" Margin="26,21,0,0"/>
+            </GroupBox>
+        </GroupBox>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="81,136,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="81,108,0,0"/>
+        <RadioButton Content="Računovođa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="164,243,0,0" Grid.ColumnSpan="2"/>
+        <RadioButton Content="Prodavač hrane" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="164,219,0,0" Grid.ColumnSpan="2"/>
+        <RadioButton Content="Menadžer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,243,0,0"/>
+        <Button Content="Log in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="38,301,0,0"/>
     </Grid>
 </Window>
