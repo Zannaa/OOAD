@@ -14,6 +14,7 @@
         <Label Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,140,0,0"/>
         <Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,108,0,0"/>
         <GroupBox Header="Unos podataka" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="408" Width="315" Margin="10,-45,0,0">
+<<<<<<< HEAD
             <GroupBox Header="Uposlenik" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="305" Margin="0,210,-2,0">
                 <RadioButton Name="r1" Content="Prodavač karata" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="106" Margin="26,21,0,0"/>
             </GroupBox>
@@ -24,5 +25,19 @@
         <RadioButton Name="r2" Content="Prodavač hrane" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="164,219,0,0" Grid.ColumnSpan="2"/>
         <RadioButton Name="r3" Content="Menadžer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,243,0,0"/>
         <Button Content="Log in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="38,301,0,0" Click="Button_Click_1"/>
+=======
+            <GroupBox Header="Tip korisnika" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="80" Width="280" Margin="0,200,0,0">
+                <Grid>
+                    <RadioButton GroupName="User" Content="Prodavač karata" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <RadioButton GroupName="User" Content="Računovođa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0"/>
+                    <RadioButton GroupName="User" Content="Menadžer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
+                    <RadioButton GroupName="User" Content="Prodavač hrane" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,34,-3,0"/>
+                </Grid>
+            </GroupBox>
+        </GroupBox>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="81,136,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="81,108,0,0"/>
+        <Button Content="Log in" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="38,301,0,0"/>
+>>>>>>> ac86f92061e9c58bebab1352e4921093a436257e
     </Grid>
 </Window>

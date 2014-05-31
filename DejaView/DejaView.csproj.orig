@@ -104,20 +104,13 @@
     <Resource Include="images.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{aff51ca2-cfe5-42df-b70d-a8f52d36b54a}</Project>
-      <Name>DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{523dcd56-e317-4b57-bbeb-a8b18940a7b8}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{c8835181-72f9-4244-9950-47282f61013a}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+=======
+>>>>>>> ac86f92061e9c58bebab1352e4921093a436257e
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{aff51ca2-cfe5-42df-b70d-a8f52d36b54a}</Project>
       <Name>DAO</Name>

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{523DCD56-E317-4B57-BBEB-A8B18940A7B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C8835181-72F9-4244-9950-47282F61013A}"
@@ -10,8 +12,6 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Baza", "Baza\Baza.sqlproj", "{0E6AA73A-C2F9-40C7-A866-F099EB2C3E9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DejaView", "DejaView\DejaView.csproj", "{837CE4A4-045A-4F09-98FB-9F876294DFAC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{9C2C9B81-8DBB-4801-ABB5-91DCDF292FAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{837CE4A4-045A-4F09-98FB-9F876294DFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{837CE4A4-045A-4F09-98FB-9F876294DFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{837CE4A4-045A-4F09-98FB-9F876294DFAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C2C9B81-8DBB-4801-ABB5-91DCDF292FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C2C9B81-8DBB-4801-ABB5-91DCDF292FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C2C9B81-8DBB-4801-ABB5-91DCDF292FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C2C9B81-8DBB-4801-ABB5-91DCDF292FAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
