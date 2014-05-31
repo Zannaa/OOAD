@@ -22,7 +22,7 @@ namespace DAO
 
         public long create(Film film)
         {
-            string exec = "INSERT INTO film VALUES(" + film.ID + ", '" + film.Naziv + "', " + film.Sifra + ")";
+            string exec = "INSERT INTO film VALUES('" + film.Naziv + "', " + film.Sifra + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
