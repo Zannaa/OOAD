@@ -83,5 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Baza.publish.xml" />
+    <None Include="local.publish.xml" />
   </ItemGroup>
 </Project>

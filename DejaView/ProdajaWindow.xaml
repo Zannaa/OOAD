@@ -8,29 +8,30 @@
             <TabItem Header="Kupovina" Margin="-2,-2,-51,-2">
                 <Grid Height="405" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="465" Background="#FFE5E5E5" Margin="-8,0,0,-11" RenderTransformOrigin="0.525,0.452">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="53*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox HorizontalAlignment="Left" Height="281" Margin="20,37,0,0" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="2"/>
-                    <GroupBox Header="Projekcija" HorizontalAlignment="Left" Margin="22,23,0,0" VerticalAlignment="Top" Height="95" Width="255" Grid.Column="1">
+                    <ListBox Name="ListaFilmovaUProdaji" HorizontalAlignment="Left" Height="281" Margin="20,37,0,0" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="2"/>
+                    <GroupBox Header="Projekcija" HorizontalAlignment="Left" Margin="22,23,0,0" VerticalAlignment="Top" Height="95" Width="255" Grid.Column="1" Grid.ColumnSpan="2">
                         <Grid HorizontalAlignment="Left" Height="95" Margin="0,-10,-12,-12" VerticalAlignment="Top" Width="255">
-                            <ComboBox HorizontalAlignment="Left" Margin="92,49,0,0" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="140"/>
+                            <ComboBox Name ="KupovinaTermini" HorizontalAlignment="Left" Margin="92,49,0,0" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
+                            <DatePicker HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="140" SelectedDate="06/06/2014"/>
                             <Label Content="Datum" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.962"/>
                             <Label Content="Vrijeme" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.962"/>
                         </Grid>
                     </GroupBox>
-                    <Grid HorizontalAlignment="Left" Height="63" Margin="35,150,0,0" VerticalAlignment="Top" Width="70" Grid.Column="1">
+                    <Grid HorizontalAlignment="Left" Height="63" Margin="0,150,0,0" VerticalAlignment="Top" Width="70" Grid.Column="2">
                         <RadioButton Content="da" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                         <RadioButton Content="ne" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
                     </Grid>
-                    <Grid HorizontalAlignment="Left" Height="63" Margin="167,150,0,0" VerticalAlignment="Top" Width="70" Grid.Column="1">
+                    <Grid HorizontalAlignment="Left" Height="63" Margin="132,150,0,0" VerticalAlignment="Top" Width="70" Grid.Column="2">
                         <RadioButton Content="da" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                         <RadioButton Content="ne" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
                     </Grid>
                     <Label Content="Film" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.711,-0.192" Height="26" Width="32"/>
-                    <Label Content="Broj karata" HorizontalAlignment="Left" Margin="72,228,0,0" VerticalAlignment="Top" Height="26" Width="67" Grid.Column="1"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="157,232,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.Column="1">
+                    <Label Content="Broj karata" HorizontalAlignment="Left" Margin="37,228,0,0" VerticalAlignment="Top" Height="26" Width="67" Grid.Column="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="122,232,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.Column="2" SelectedIndex="5">
                         <sys:Int32>1</sys:Int32>
                         <sys:Int32>2</sys:Int32>
                         <sys:Int32>3</sys:Int32>
@@ -42,7 +43,7 @@
                         <sys:Int32>9</sys:Int32>
                         <sys:Int32>10</sys:Int32>
                     </ComboBox>
-                    <ListBox HorizontalAlignment="Left" Height="50" Margin="157,268,0,0" VerticalAlignment="Top" Width="120" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged_1" Grid.Column="1">
+                    <ListBox HorizontalAlignment="Left" Height="50" Margin="122,268,0,0" VerticalAlignment="Top" Width="120" SelectionMode="Multiple" Grid.Column="2">
                         <sys:String>1A</sys:String>
                         <sys:String>2A</sys:String>
                         <sys:String>3A</sys:String>
@@ -104,27 +105,33 @@
                         <sys:String>9F</sys:String>
                         <sys:String>10F</sys:String>
                     </ListBox>
-                    <GroupBox Header="Rezervacija" HorizontalAlignment="Left" Margin="22,133,0,0" VerticalAlignment="Top" Height="90" Width="120" Grid.Column="1"/>
-                    <GroupBox Header="Clan" HorizontalAlignment="Left" Margin="157,133,0,0" VerticalAlignment="Top" Height="90" Width="120" Grid.Column="1"/>
-                    <Label Content="Sjedista" HorizontalAlignment="Left" Margin="88,268,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.385" Height="26" Width="51" Grid.Column="1"/>
-                    <Button Content="OK" HorizontalAlignment="Left" Margin="202,353,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Column="1"/>
-                    <Button Content="Racun" HorizontalAlignment="Left" Margin="110,353,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Column="1"/>
+                    <GroupBox Header="Rezervacija" HorizontalAlignment="Left" Margin="22,133,0,0" VerticalAlignment="Top" Height="90" Width="120" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <GroupBox Header="Clan" HorizontalAlignment="Left" Margin="122,133,0,0" VerticalAlignment="Top" Height="90" Width="120" Grid.Column="2"/>
+                    <Label Content="Sjedista" HorizontalAlignment="Left" Margin="53,268,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.385" Height="26" Width="51" Grid.Column="2"/>
+                    <Button Content="OK" HorizontalAlignment="Left" Margin="167,353,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Column="2"/>
+                    <Button Content="Racun" HorizontalAlignment="Left" Margin="75,353,0,0" VerticalAlignment="Top" Width="75" Height="22" Grid.Column="2"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Rezervacija" Margin="51,-2,-104,-2">
                 <Grid Background="#FFE5E5E5">
-                    <GroupBox Header="Projekcija" HorizontalAlignment="Left" Margin="187,23,0,0" VerticalAlignment="Top" Height="95" Width="255">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="369*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Projekcija" HorizontalAlignment="Left" Margin="105,23,0,0" VerticalAlignment="Top" Height="95" Width="255" Grid.Column="3">
                         <Grid HorizontalAlignment="Left" Height="95" Margin="0,-10,-12,-12" VerticalAlignment="Top" Width="255">
-                            <ComboBox HorizontalAlignment="Left" Margin="92,49,0,0" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
-                            <DatePicker HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="140"/>
+                            <ComboBox  Name = "RezervacijaTermini" HorizontalAlignment="Left" Margin="92,49,0,0" VerticalAlignment="Top" Width="140" IsReadOnly="True" SelectedIndex="0"/>
+                            <DatePicker Name = "Datum" HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="140" SelectedDate="06/05/2014"/>
                             <Label Content="Datum" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.962"/>
                             <Label Content="Vrijeme" HorizontalAlignment="Left" Margin="24,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.962"/>
                         </Grid>
                     </GroupBox>
-                    <ListBox HorizontalAlignment="Left" Height="281" Margin="20,37,0,0" VerticalAlignment="Top" Width="147"/>
-                    <Label Content="Film" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.711,-0.192" Height="26" Width="32"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="287,148,0,0" VerticalAlignment="Top" Width="140" Height="22">
+                    <ListBox Name="ListaFilmovaZaRezervaciju" HorizontalAlignment="Left" Height="281" Margin="8,37,0,0" VerticalAlignment="Top" Width="147" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <Label Content="Film" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.711,-0.192" Height="26" Width="32" Grid.Column="1"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="205,148,0,0" VerticalAlignment="Top" Width="140" Height="22" SelectedIndex="0" Grid.Column="3">
                         <sys:Int32>1</sys:Int32>
                         <sys:Int32>2</sys:Int32>
                         <sys:Int32>3</sys:Int32>
@@ -136,9 +143,9 @@
                         <sys:Int32>9</sys:Int32>
                         <sys:Int32>10</sys:Int32>
                     </ComboBox>
-                    <Label Content="Broj karata" HorizontalAlignment="Left" Margin="187,144,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
-                    <Label Content="Sjedista" HorizontalAlignment="Left" Margin="203,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.385" Height="26" Width="51"/>
-                    <ListBox HorizontalAlignment="Left" Height="50" Margin="287,192,0,0" VerticalAlignment="Top" Width="140" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged_1" RenderTransformOrigin="0.467,0.44">
+                    <Label Content="Broj karata" HorizontalAlignment="Left" Margin="105,144,0,0" VerticalAlignment="Top" Height="26" Width="67" Grid.Column="3"/>
+                    <Label Content="Sjedista" HorizontalAlignment="Left" Margin="121,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.132,0.385" Height="26" Width="51" Grid.Column="3"/>
+                    <ListBox HorizontalAlignment="Left" Height="50" Margin="205,192,0,0" VerticalAlignment="Top" Width="140" SelectionMode="Multiple" RenderTransformOrigin="0.467,0.44" Grid.Column="3">
                         <sys:String>1A</sys:String>
                         <sys:String>2A</sys:String>
                         <sys:String>3A</sys:String>
@@ -200,7 +207,7 @@
                         <sys:String>9F</sys:String>
                         <sys:String>10F</sys:String>
                     </ListBox>
-                    <Button Content="Rezervisi" HorizontalAlignment="Left" Margin="352,302,0,0" VerticalAlignment="Top" Width="75" Height="22" RenderTransformOrigin="0.333,-0.864"/>
+                    <Button Content="Rezervisi" HorizontalAlignment="Left" Margin="270,302,0,0" VerticalAlignment="Top" Width="75" Height="22" RenderTransformOrigin="0.333,-0.864" Grid.Column="3"/>
                 </Grid>
 
             </TabItem>
@@ -209,9 +216,9 @@
                     <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Height="184" Width="404">
                         <Grid HorizontalAlignment="Left" Height="156" Margin="10,10,0,0" VerticalAlignment="Top" Width="355">
                             <Image HorizontalAlignment="Left" Height="100" Margin="19,10,0,0" VerticalAlignment="Top" Width="100"/>
-                            <Button Content="Slika" HorizontalAlignment="Left" Margin="29,122,0,0" VerticalAlignment="Top" Width="75"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="209,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="146"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="209,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="146"/>
+                            <Button Content="Slika" HorizontalAlignment="Left" Margin="29,122,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="209,20,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="146"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="209,53,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="146"/>
                             <Label Content="Ime" HorizontalAlignment="Left" Margin="158,20,0,0" VerticalAlignment="Top"/>
                             <Label Content="Prezime" HorizontalAlignment="Left" Margin="136,53,0,0" VerticalAlignment="Top"/>
                             <Button Content="Uclani" HorizontalAlignment="Left" Margin="280,124,0,0" VerticalAlignment="Top" Width="75"/>
@@ -222,11 +229,11 @@
                             <ListBox HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="114"/>
                             <GroupBox Header="Pretrazi po" HorizontalAlignment="Left" Margin="134,0,0,0" VerticalAlignment="Top" Height="59" Width="230">
                                 <Grid HorizontalAlignment="Left" Height="30" Margin="10,0,0,-3" VerticalAlignment="Top" Width="206">
-                                    <RadioButton Content="imenu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <RadioButton Content="imenu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
                                     <RadioButton Content="sifri" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top"/>
                                 </Grid>
                             </GroupBox>
-                            <DatePicker HorizontalAlignment="Left" Margin="204,73,0,0" VerticalAlignment="Top" Width="160"/>
+                            <DatePicker HorizontalAlignment="Left" Margin="204,73,0,0" VerticalAlignment="Top" Width="160" SelectedDate="06/03/2014"/>
                             <Label Content="Datum" HorizontalAlignment="Left" Margin="134,71,0,0" VerticalAlignment="Top"/>
                             <Button Content="Obnovi" HorizontalAlignment="Left" Margin="289,110,0,0" VerticalAlignment="Top" Width="75"/>
                         </Grid>

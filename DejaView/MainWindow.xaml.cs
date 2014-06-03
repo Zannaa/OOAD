@@ -34,7 +34,6 @@ namespace DejaView
             InitializeComponent();
         }
 
-<<<<<<< HEAD
       
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {  
@@ -76,19 +75,17 @@ namespace DejaView
             }
             //   azrinprozor.Show() ;}
             else
-            {*/
+            {
                MainWindow m = new MainWindow();
                 m.Show(); 
-            
-           // }
+            */
+            }
             
 
-=======
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            // Login l =new Login();
            // l.Show();
->>>>>>> ac86f92061e9c58bebab1352e4921093a436257e
         }
     }
 }

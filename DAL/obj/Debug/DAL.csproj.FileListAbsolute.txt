@@ -3,10 +3,6 @@ C:\Users\Zana Tatar\Desktop\new3\OOAD\DAL\bin\Debug\DAL.pdb
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAL\obj\Debug\DAL.dll
 C:\Users\Zana Tatar\Desktop\new3\OOAD\DAL\obj\Debug\DAL.pdb
-C:\Users\Adnan\Source\Repos\OOAD\DAL\bin\Debug\DAL.dll
-C:\Users\Adnan\Source\Repos\OOAD\DAL\bin\Debug\DAL.pdb
-C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.dll
-C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.pdb
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\bin\Debug\DAL.dll
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\bin\Debug\DAL.pdb
 C:\Users\Adna\Source\Repos\OOADnovo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
@@ -21,3 +17,7 @@ C:\Users\Adna\Source\Repos\OOAD6\DAL\bin\Debug\DAL.pdb
 C:\Users\Adna\Source\Repos\OOAD6\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Adna\Source\Repos\OOAD6\DAL\obj\Debug\DAL.dll
 C:\Users\Adna\Source\Repos\OOAD6\DAL\obj\Debug\DAL.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAL\bin\Debug\DAL.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAL\bin\Debug\DAL.pdb
+C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.dll
+C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.pdb

@@ -101,8 +101,8 @@ namespace DAO
         {
             // buildamo query
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Projekcija AS p, Film AS f, Sala AS s");
-            QueryBuilder.Append(" WHERE p.FilmID = f.Id AND p.SalaID = s.Id");
+            QueryBuilder.Append("SELECT * FROM Film as f INNER JOIN Projekcija p ON p.FilmId = f.Id");
+            QueryBuilder.Append(" INNER JOIN Sala AS s ON p.SalaID = s.Id");
 
             string query = QueryBuilder.ToString();
 

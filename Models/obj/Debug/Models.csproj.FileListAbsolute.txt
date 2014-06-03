@@ -1,7 +1,3 @@
-C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.dll
-C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.pdb
-C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.dll
-C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.pdb
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\bin\Debug\Models.dll
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\bin\Debug\Models.pdb
 C:\Users\Zana Tatar\Documents\Visual Studio 2012\Projects\DejaView\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
@@ -41,3 +37,7 @@ C:\Users\Adna\Source\Repos\OOAD6\Models\bin\Debug\Models.pdb
 C:\Users\Adna\Source\Repos\OOAD6\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Adna\Source\Repos\OOAD6\Models\obj\Debug\Models.dll
 C:\Users\Adna\Source\Repos\OOAD6\Models\obj\Debug\Models.pdb
+C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.dll
+C:\Users\Adnan\Source\Repos\OOAD\Models\bin\Debug\Models.pdb
+C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.dll
+C:\Users\Adnan\Source\Repos\OOAD\Models\obj\Debug\Models.pdb

@@ -87,5 +87,9 @@ namespace Models
         }
         #endregion
 
+        public override string ToString()
+        {
+            return this.Naziv;
+        }
     }
 }
