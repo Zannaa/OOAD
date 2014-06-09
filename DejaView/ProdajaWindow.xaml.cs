@@ -131,18 +131,29 @@ namespace DejaView
               KupovinaTermini.ItemsSource = termini; */
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+      
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             string sifra = RandomString(15);
+            MessageBox.Show(sifra);
+            
             Clan c = new Clan(sifra, DateTime.Now, Imec.Text, Prezimec.Text);
 
             ClanDAO cl = new ClanDAO();
 
-            cl.create(c);
+            long i = cl.create(c);
+            MessageBox.Show(Convert.ToString(i)); 
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+       
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
         }

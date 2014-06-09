@@ -77,7 +77,7 @@ namespace DAO
 		    k = new Clan
 			    (
                                    Convert.ToInt32(dataRow["Id"]),
-                                      Convert.ToInt32(dataRow["Kod"]),
+                                      Convert.ToString(dataRow["Kod"]),
                                       Convert.ToDateTime(dataRow["Clanstvo "]), 
                                    Convert.ToString(dataRow["Ime"]),
                                     Convert.ToString(dataRow["Prezime"])
@@ -183,7 +183,7 @@ namespace DAO
                     k = new Clan
                         (
                                            Convert.ToInt32(dataRow["Id"]),
-                                              Convert.ToInt32(dataRow["Kod"]),
+                                              Convert.ToString(dataRow["Kod"]),
                                               Convert.ToDateTime(dataRow["Clanstvo "]),
                                            Convert.ToString(dataRow["Ime"]),
                                             Convert.ToString(dataRow["Prezime"])
