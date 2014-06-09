@@ -22,3 +22,7 @@ C:\Users\Adnan\Source\Repos\OOAD\DAL\bin\Debug\DAL.pdb
 C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.dll
 C:\Users\Adnan\Source\Repos\OOAD\DAL\obj\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\new2\OOAD\DAL\bin\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\new2\OOAD\DAL\bin\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\new2\OOAD\DAL\obj\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\new2\OOAD\DAL\obj\Debug\DAL.pdb

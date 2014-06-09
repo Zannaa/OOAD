@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(Clan clan)
         {
-            string exec = "INSERT INTO clan VALUES(" + clan.Id + ", " + clan.Sifra + ", " + clan.Clanstvo + ", '" + clan.Ime + "', '" + clan.Prezime +  ")";
+            string exec = "INSERT INTO Clan VALUES(" + clan.Ime + ", " + clan.Prezime + ", '" + clan.Sifra + "', '" + clan.Clanstvo + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -38,7 +38,7 @@ namespace DAO
         public Clan update(Clan clan)
         {
             int id = clan.Id;
-            int sifra = clan.Sifra;
+            string sifra = clan.Sifra;
             DateTime clanstvo = clan.Clanstvo;
             string ime = clan.Ime;
             string prezime = clan.Prezime;
@@ -68,7 +68,7 @@ namespace DAO
             {
                 Clan clan = new Clan(
                     Convert.ToInt32(dataRow["id"]),
-                    Convert.ToInt32(dataRow["sifra"]),
+                    Convert.ToString(dataRow["sifra"]),
                     Convert.ToDateTime(dataRow["clanstvo"]),
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"])
@@ -89,7 +89,7 @@ namespace DAO
             {
                 Clan clan = new Clan(
                     Convert.ToInt32(dataRow["id"]),
-                    Convert.ToInt32(dataRow["sifra"]),
+                    Convert.ToString(dataRow["sifra"]),
                     Convert.ToDateTime(dataRow["clanstvo"]),
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"])

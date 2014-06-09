@@ -17,7 +17,7 @@ namespace Models
         /// <summary>
         /// Jedinstvena sifra kupca
         /// </summary>
-        public int Sifra { get; set; }
+        public string Sifra { get; set; }
 
         /// <summary>
         /// Datum prijave clana
@@ -42,7 +42,7 @@ namespace Models
         /// <param name="clanstvo">Datum prijave clana</param>
         /// <param name="ime">Ime kupca</param>
         /// <param name="prezime">Prezime kupca</param>
-        public Clan(int id, int sifra, DateTime clanstvo, string ime, string prezime)
+        public Clan(int id, string sifra, DateTime clanstvo, string ime, string prezime)
         {
             this.Id = id;
             this.Sifra = sifra;
@@ -58,7 +58,7 @@ namespace Models
         /// <param name="clanstvo">Datum prijave clana</param>
         /// <param name="ime">Ime kupca</param>
         /// <param name="prezime">Prezime kupca</param>
-        public Clan(int sifra, DateTime clanstvo, string ime, string prezime)
+        public Clan(string sifra, DateTime clanstvo, string ime, string prezime)
         {
             this.Sifra = sifra;
             this.Clanstvo = clanstvo;
