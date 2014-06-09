@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(ObicniKupac ObicniKupac)
         {
-            string exec = "INSERT INTO ObicniKupac VALUES(" + ObicniKupac.Id  + ", '" + ObicniKupac.Ime + "', '" + ObicniKupac.Prezime + "', '" + ObicniKupac.Sifra+"' )";
+            string exec = "INSERT INTO ObicniKupac VALUES('" + ObicniKupac.Ime + "', '" + ObicniKupac.Prezime + "', '" + ObicniKupac.Sifra+"' )";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -43,8 +43,8 @@ namespace DAO
             string ime = Obicnikupac.Ime;
             string prezime = Obicnikupac.Prezime;
 
-            string exec = "UPDATE clan SET id = " + id + ", sifra = " + sifra + ", ime = '" + ime + "', prezime = '" + prezime + "'";
-            exec += " WHERE id = " + id;
+            string exec = "UPDATE ObicniKupac SET sifra = " + sifra + ", ime = '" + ime + "', prezime = '" + prezime + "'";
+            exec += " WHERE ObicniKupacID = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return Obicnikupac;
@@ -55,19 +55,19 @@ namespace DAO
             int id = Obicnikupac.Id;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Obicnikupac WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Obicnikupac WHERE ObicniKupacID = " + id);
 
         }
 
         public ObicniKupac getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Obicnikupac where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Obicnikupac where ObicniKupacID = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 ObicniKupac Obicnikupac = new ObicniKupac(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["ObicniKupacID"]),
                     Convert.ToInt32(dataRow["sifra"]),
 
                     Convert.ToString(dataRow["ime"]),
@@ -88,7 +88,7 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 ObicniKupac Obicnikupac = new ObicniKupac(
-                     Convert.ToInt32(dataRow["id"]),
+                     Convert.ToInt32(dataRow["ObicniKupacID"]),
                      Convert.ToInt32(dataRow["sifra"]),
 
                      Convert.ToString(dataRow["ime"]),

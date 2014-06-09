@@ -22,7 +22,7 @@ namespace DAO
 
         public long create(RadnoVrijeme radnoVrijeme)
         {
-            string exec = "INSERT INTO radnoVrijeme VALUES(" + radnoVrijeme.Id+", " + radnoVrijeme.Pocetak +", " + radnoVrijeme.Kraj + ")";
+            string exec = "INSERT INTO radnoVrijeme VALUES(" + radnoVrijeme.Pocetak + ", " + radnoVrijeme.Kraj + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -40,8 +40,8 @@ namespace DAO
             DateTime pocetak = radnoVrijeme.Pocetak;
             DateTime kraj = radnoVrijeme.Kraj;
 
-            string exec = "UPDATE radnoVrijeme SET id = " + id + ", pocetak radnog vremena = " + pocetak + ", kraj radnog vremena=";
-            exec += " WHERE id = " + id;
+            string exec = "UPDATE radnoVrijeme SET pocetak radnog vremena = " + pocetak + ", kraj radnog vremena=";
+            exec += " WHERE RadnoVrijemeId = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return radnoVrijeme;
@@ -52,14 +52,14 @@ namespace DAO
             int id = radnoVrijeme.Id;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM radnoVrijeme WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM radnoVrijeme WHERE RadnoVrijemeId = " + id);
 
         }
 
         public RadnoVrijeme getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM finansijskiMenadzer where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM finansijskiMenadzer where RadnoVrijemeId = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {

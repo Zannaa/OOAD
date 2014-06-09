@@ -25,7 +25,7 @@ namespace DAO
             
          
 
-            string exec = "INSERT INTO projekcija VALUES(" + projekcija.ID + ", " + projekcija.Pocetak + ", " + projekcija.Kraj + "," + projekcija.Cijena+ " ,"+ projekcija.Sala+","+projekcija.Film + ")";
+            string exec = "INSERT INTO projekcija VALUES(" + projekcija.Pocetak + ", " + projekcija.Kraj + "," + projekcija.Cijena+ " ,"+ projekcija.Sala+","+projekcija.Film + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
         }
@@ -45,7 +45,7 @@ namespace DAO
             QueryBuilder.Append("p.Cijena = " + projekcija.Cijena + ", ");
             QueryBuilder.Append("p.FilmID =" + projekcija.Film.ID + ", ") ;
             QueryBuilder.Append("p.SalaID="+ projekcija.Sala.ID+ ", ") ;
-            QueryBuilder.Append("WHERE p.ID ="+projekcija.ID) ;
+            QueryBuilder.Append("WHERE p.ProjekcijaID ="+projekcija.ID) ;
 
 
             return projekcija;
@@ -56,15 +56,15 @@ namespace DAO
             int id = projekcija.ID;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM menadzer WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM menadzer WHERE ProjekcijaID = " + id);
         }
 
         public Projekcija getById(int id)
         {
             // buildamo query
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Projekcija AS p, Film AS f, Sala AS s WHERE p.Id = " + id);
-            QueryBuilder.Append(" AND p.FilmID = f.Id AND p.SalaID = s.Id");
+            QueryBuilder.Append("SELECT * FROM Projekcija AS p, Film AS f, Sala AS s WHERE p.ProjekcijaID = " + id);
+            QueryBuilder.Append(" AND p.FilmID = f.FilmID AND p.SalaID = s.SalaID");
 
             string query = QueryBuilder.ToString();
 
@@ -75,17 +75,18 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {   
                 Projekcija projekcija = new Projekcija(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["ProjekcijaID"]),
                     Convert.ToDateTime(dataRow["Pocetak"]),
                     Convert.ToDateTime(dataRow["Kraj"]),
                     Convert.ToDouble(dataRow["Cijena"]),
                     new Film(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["FilmID"]),
                         Convert.ToString(dataRow["Naziv"]),
                         Convert.ToInt32(dataRow["Sifra"])
                         ),
                     new Sala(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["SalaID"]),
+                        0,
                         Convert.ToInt32(dataRow["Kapacitet"]),
                         new List<int>()
                         )
@@ -101,8 +102,8 @@ namespace DAO
         {
             // buildamo query
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Film as f INNER JOIN Projekcija p ON p.FilmId = f.Id");
-            QueryBuilder.Append(" INNER JOIN Sala AS s ON p.SalaID = s.Id");
+            QueryBuilder.Append("SELECT * FROM Film as f INNER JOIN Projekcija p ON p.FilmId = f.FilmId");
+            QueryBuilder.Append(" INNER JOIN Sala AS s ON p.SalaID = s.SalaID");
 
             string query = QueryBuilder.ToString();
 
@@ -115,17 +116,18 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Projekcija projekcija = new Projekcija(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["ProjekcijaId"]),
                     Convert.ToDateTime(dataRow["Pocetak"]),
                     Convert.ToDateTime(dataRow["Kraj"]),
                     Convert.ToDouble(dataRow["Cijena"]),
                     new Film(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["FilmId"]),
                         Convert.ToString(dataRow["Naziv"]),
                         Convert.ToInt32(dataRow["Sifra"])
                         ),
                     new Sala(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["SalaId"]),
+                        0,
                         Convert.ToInt32(dataRow["Kapacitet"]),
                         new List<int>()
                         )
@@ -142,7 +144,7 @@ namespace DAO
             int id = rezervacija.ID;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM rezervacija WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM rezervacija WHERE RezervacijaId = " + id);
         }
 
     }

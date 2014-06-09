@@ -24,7 +24,7 @@ namespace DAO
 
         public long create(PrehrambeniProdukt produkt)
         {
-            string exec = "INSERT INTO produkt VALUES( "+produkt.Id+", '"+ produkt.Tip + "', " + produkt.Cijena + ")";
+            string exec = "INSERT INTO PrehrambeniProdukt VALUES( "+produkt.Id+", '"+ produkt.Tip + "', " + produkt.Cijena + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -45,8 +45,8 @@ namespace DAO
             double cijena = produkt.Cijena;
 
 
-            string exec = "UPDATE produkt SET tip = '" + tip + "', cijena = " + cijena;
-            exec += " WHERE id = " + produkt.Id;
+            string exec = "UPDATE PrehrambeniProdukt SET tip = '" + tip + "', cijena = " + cijena;
+            exec += " WHERE PrehrambeniProduktID = " + produkt.Id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return produkt;
@@ -57,7 +57,7 @@ namespace DAO
             int id = produkt.Id;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM film WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM PrehrambeniProdukt WHERE PrehrambeniProduktID = " + id);
 
         }
 
@@ -65,12 +65,12 @@ namespace DAO
         {
 
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM film where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM PrehrambeniProdukt where PrehrambeniProduktID = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 PrehrambeniProdukt produkt = new PrehrambeniProdukt(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["PrehrambeniProduktID"]),
                     Convert.ToString(dataRow["tip"]),
                     Convert.ToDouble(dataRow["cijena"])
                 );
@@ -85,13 +85,13 @@ namespace DAO
         public List<PrehrambeniProdukt> getAll()
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM produkt");
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM PrehrambeniProdukt");
 
             List<PrehrambeniProdukt> produkti = new List<PrehrambeniProdukt>();
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 PrehrambeniProdukt produkt = new PrehrambeniProdukt(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["PrehrambeniProduktID"]),
                     Convert.ToString(dataRow["tip"]),
                     Convert.ToDouble(dataRow["cijena"])
                 );

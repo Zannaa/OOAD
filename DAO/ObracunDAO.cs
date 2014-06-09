@@ -33,7 +33,7 @@ namespace DAO
         {
             StringBuilder QueryBuilder = new StringBuilder();
             QueryBuilder.Append("UPDATE Obracun AS o");
-            QueryBuilder.Append("SET o.Id = " + obracun.Id + ", ");
+            QueryBuilder.Append("SET o.ObracunId = " + obracun.Id + ", ");
             QueryBuilder.Append("o.Datum = " + obracun.Datum + ", ");
             QueryBuilder.Append("o.Obracunao = " + obracun.Obracunao.Id_uposlenika + ", ");
             QueryBuilder.Append("o.UposlenikID =" + obracun.Uposlenik.Id_uposlenika);
@@ -46,14 +46,14 @@ namespace DAO
         {
             int id = obracun.Id;
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Obracun WHERE Id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Obracun WHERE ObracunId = " + id);
         }
 
         public Obracun getById(int id)
         {
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u WHERE o.Id = " + id);
-            QueryBuilder.Append(" AND u.Id = o.UposlenikID");
+            QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u WHERE o.ObracunId = " + id);
+            QueryBuilder.Append(" AND u.UposlenikID = o.UposlenikID");
             
 
             string query = QueryBuilder.ToString();
@@ -63,14 +63,14 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Obracun obracun = new Obracun(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["ObracunId"]),
                     new FinansijskiMenadzer(
                     Convert.ToDouble(dataRow["Budzet"]),
                     Convert.ToString(dataRow["Telefon"]),
                     Convert.ToString(dataRow["Ime"]),
                     Convert.ToString(dataRow["Prezime"]),
                     Convert.ToString(dataRow["Jmbg"]),
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["Koeficijent"])
                         ),
                     Convert.ToDateTime(dataRow["Datum"]),
@@ -78,7 +78,7 @@ namespace DAO
                         Convert.ToString(dataRow["Ime"]),
                         Convert.ToString(dataRow["Prezime"]),
                         Convert.ToString(dataRow["Jmbg"]),
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["UposlenikID"]),
                         Convert.ToDouble(dataRow["Koeficijent"])
                         )
                 );
@@ -93,7 +93,7 @@ namespace DAO
           {
               StringBuilder QueryBuilder = new StringBuilder();
               QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u");
-              QueryBuilder.Append("  u.Id = o.UposlenikID");
+              QueryBuilder.Append("  u.UposlenikId = o.UposlenikID");
 
               string query = QueryBuilder.ToString();
 
@@ -104,14 +104,14 @@ namespace DAO
               foreach (DataRow dataRow in data.Tables[0].Rows)
               {
                 Obracun obracun = new Obracun(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["ObracunId"]),
                     new FinansijskiMenadzer(
                     Convert.ToDouble(dataRow["Budzet"]),
                     Convert.ToString(dataRow["Telefon"]),
                     Convert.ToString(dataRow["Ime"]),
                     Convert.ToString(dataRow["Prezime"]),
                     Convert.ToString(dataRow["Jmbg"]),
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["Koeficijent"])
                         ),
                     Convert.ToDateTime(dataRow["Datum"]),
@@ -119,7 +119,7 @@ namespace DAO
                         Convert.ToString(dataRow["Ime"]),
                         Convert.ToString(dataRow["Prezime"]),
                         Convert.ToString(dataRow["Jmbg"]),
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["UposlenikID"]),
                         Convert.ToDouble(dataRow["Koeficijent"])
                         )
                 );

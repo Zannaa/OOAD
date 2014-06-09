@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Uposlenik]
 (
-	[Id] INT Identity(1,1) NOT NULL PRIMARY KEY, 
+	[UposlenikId] INT Identity(1,1) NOT NULL PRIMARY KEY, 
     [Ime] NVARCHAR(50) NOT NULL, 
     [Prezime] NVARCHAR(50) NOT NULL, 
     [Jmbg] NCHAR(13) NOT NULL, 

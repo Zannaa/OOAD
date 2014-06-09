@@ -43,7 +43,7 @@ namespace DAO
             string ime = clan.Ime;
             string prezime = clan.Prezime;
             
-            string exec = "UPDATE clan SET id = " + id + ", sifra = " + sifra + ", clanstvo = " + clanstvo + ", ime = '" + ime + "', prezime = '" + prezime + "'";
+            string exec = "UPDATE clan SET ClanId = " + id + ", sifra = " + sifra + ", clanstvo = " + clanstvo + ", ime = '" + ime + "', prezime = '" + prezime + "'";
             exec += " WHERE id = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
@@ -55,19 +55,19 @@ namespace DAO
             int id = clan.Id;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM clan WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM clan WHERE ClanId = " + id);
 
         }
 
         public Clan getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM clan where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM clan where ClanId = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Clan clan = new Clan(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["ClanId"]),
                     Convert.ToString(dataRow["sifra"]),
                     Convert.ToDateTime(dataRow["clanstvo"]),
                     Convert.ToString(dataRow["ime"]),
@@ -88,7 +88,7 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Clan clan = new Clan(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["ClanId"]),
                     Convert.ToString(dataRow["sifra"]),
                     Convert.ToDateTime(dataRow["clanstvo"]),
                     Convert.ToString(dataRow["ime"]),

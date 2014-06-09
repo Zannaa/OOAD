@@ -49,8 +49,8 @@ namespace DAO
         {
             // buildamo query
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Rezervacija AS r, Projekcija AS p, Film AS f, Sala AS s, ObicniKupac as o,Clan AS c WHERE r.Id = " + id);
-            QueryBuilder.Append(" AND r.ProjekcijaID = p.ID  AND p.FilmID = f.Id AND p.SalaID = s.Id AND r.ClanID=c.Id AND r.ObicniKupacID=o.Id");
+            QueryBuilder.Append("SELECT * FROM Rezervacija AS r, Projekcija AS p, Film AS f, Sala AS s, ObicniKupac as o,Clan AS c WHERE r.RezervacijaId = " + id);
+            QueryBuilder.Append(" AND r.ProjekcijaID = p.ProjekcijaID  AND p.FilmID = f.FilmID AND p.SalaID = s.SalaID AND r.ClanID=c.ClanID AND r.ObicniKupacID=o.ObicniKupacID");
 
             string query = QueryBuilder.ToString();
 
@@ -66,7 +66,7 @@ namespace DAO
                 {
 		   k =  new ObicniKupac
 			    (
-                                Convert.ToInt32(dataRow["Id"]),
+                                Convert.ToInt32(dataRow["ObicniKupacID"]),
                                 Convert.ToInt32(dataRow["Kod"]),
                                 Convert.ToString(dataRow["Ime"]),
                                 Convert.ToString(dataRow["Prezime"])
@@ -76,8 +76,8 @@ namespace DAO
 		{
 		    k = new Clan
 			    (
-                                   Convert.ToInt32(dataRow["Id"]),
-                                      Convert.ToInt32(dataRow["Kod"]),
+                                   Convert.ToInt32(dataRow["ClanID"]),
+                                      Convert.ToString(dataRow["Sifra"]),
                                       Convert.ToDateTime(dataRow["Clanstvo "]), 
                                    Convert.ToString(dataRow["Ime"]),
                                     Convert.ToString(dataRow["Prezime"])
@@ -86,20 +86,20 @@ namespace DAO
 
 		    
                     Rezervacija r = new Rezervacija(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["RezervacijaId"]),
 
                          new Projekcija(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["ProjekcijaId"]),
                         Convert.ToDateTime(dataRow["Pocetak"]),
                         Convert.ToDateTime(dataRow["Kraj"]),
                         Convert.ToDouble(dataRow["Cijena"]),
                         new Film(
-                            Convert.ToInt32(dataRow["Id"]),
+                            Convert.ToInt32(dataRow["FilmId"]),
                             Convert.ToString(dataRow["Naziv"]),
                             Convert.ToInt32(dataRow["Sifra"])
                             ),
                         new Sala(
-                            Convert.ToInt32(dataRow["Id"]),
+                            Convert.ToInt32(dataRow["SalaId"]),
                             Convert.ToInt32(dataRow["Kapacitet"]),
                             new List<int>()
                             )),
@@ -125,25 +125,25 @@ namespace DAO
 
             StringBuilder QueryBuilder = new StringBuilder();
             QueryBuilder.Append("UPDATE Rezervacija AS r ");
-            QueryBuilder.Append("SET r.Id = " + rezervacija.ID + ", ");
+            QueryBuilder.Append("SET r.RezervacijaId = " + rezervacija.ID + ", ");
             QueryBuilder.Append("r.Sjediste = " + rezervacija.Sjediste + ", ");
             QueryBuilder.Append("r.ClanID = " + rezervacija.Rezervisao.ID + ", ");
             QueryBuilder.Append("r.ObicniKupacID = " + rezervacija.Rezervisao.ID + ", ");
             QueryBuilder.Append("r.ProjekcijaID = " + rezervacija.Projekcija.ID + ", ");
-           QueryBuilder.Append(" WHERE r.ID =" + rezervacija.ID);
+           QueryBuilder.Append(" WHERE r.RezervacijaID =" + rezervacija.ID);
 
            if (rezervacija.Rezervisao.GetType() == typeof(Clan))
            {
                QueryBuilder.Append("UPDATE Rezervacija AS r ");
                QueryBuilder.Append(" SET r.ClanID = " + rezervacija.Rezervisao.ID + ", ");
-               QueryBuilder.Append(" WHERE r.ID =" + rezervacija.ID);
+               QueryBuilder.Append(" WHERE r.RezervacijaID =" + rezervacija.ID);
 
            }
            else
            {
                QueryBuilder.Append("UPDATE Rezervacija AS r ");
                QueryBuilder.Append("r.ObicniKupacID = " + rezervacija.Rezervisao.ID + ", ");
-               QueryBuilder.Append(" WHERE r.ID =" + rezervacija.ID);
+               QueryBuilder.Append(" WHERE r.RezervacijaID =" + rezervacija.ID);
 
            }
            return rezervacija; 
@@ -154,7 +154,7 @@ namespace DAO
             // buildamo query
             StringBuilder QueryBuilder = new StringBuilder();
             QueryBuilder.Append("SELECT * FROM Rezervacija AS r, Projekcija AS p, Film AS f, Sala AS s, ObicniKupac as o,Clan AS c");
-            QueryBuilder.Append( " AND r.ProjekcijaID = p.ID  AND p.FilmID = f.Id AND p.SalaID = s.Id AND r.ClanID=c.Id AND r.ObicniKupacID=o.Id");
+            QueryBuilder.Append(" WHERE r.ProjekcijaID = p.ProjekcijaID  AND p.FilmID = f.FilmID AND p.SalaID = s.SalaID AND r.ClanID=c.ClanID AND r.ObicniKupacID=o.ObicniKupacID");
 
             string query = QueryBuilder.ToString();
 
@@ -172,7 +172,7 @@ namespace DAO
                 {
                     k = new ObicniKupac
                          (
-                                         Convert.ToInt32(dataRow["Id"]),
+                                         Convert.ToInt32(dataRow["ObicniKupacID"]),
                                          Convert.ToInt32(dataRow["Kod"]),
                                          Convert.ToString(dataRow["Ime"]),
                                          Convert.ToString(dataRow["Prezime"])
@@ -182,8 +182,8 @@ namespace DAO
                 {
                     k = new Clan
                         (
-                                           Convert.ToInt32(dataRow["Id"]),
-                                              Convert.ToInt32(dataRow["Kod"]),
+                                           Convert.ToInt32(dataRow["ClanId"]),
+                                              Convert.ToString(dataRow["Sifra"]),
                                               Convert.ToDateTime(dataRow["Clanstvo "]),
                                            Convert.ToString(dataRow["Ime"]),
                                             Convert.ToString(dataRow["Prezime"])
@@ -192,20 +192,20 @@ namespace DAO
 
 
                 Rezervacija r = new Rezervacija(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["RezervacijaId"]),
 
                      new Projekcija(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["ProjekcijaId"]),
                     Convert.ToDateTime(dataRow["Pocetak"]),
                     Convert.ToDateTime(dataRow["Kraj"]),
                     Convert.ToDouble(dataRow["Cijena"]),
                     new Film(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["FilmId"]),
                         Convert.ToString(dataRow["Naziv"]),
                         Convert.ToInt32(dataRow["Sifra"])
                         ),
                     new Sala(
-                        Convert.ToInt32(dataRow["Id"]),
+                        Convert.ToInt32(dataRow["SalaId"]),
                         Convert.ToInt32(dataRow["Kapacitet"]),
                         new List<int>()
                         )),

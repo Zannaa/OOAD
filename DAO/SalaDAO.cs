@@ -24,7 +24,7 @@ namespace DAO
 
         public long create(Sala sala) {
 
-            string exec = "INSERT INTO sala VALUES(" + sala.ID + ", " + sala.Kapacitet + ", " + sala.Sjediste + ", "+sala.Sjedista+")";
+            string exec = "INSERT INTO sala VALUES(" + sala.Kapacitet + ", " + sala.Sjediste + ", " + sala.Sjedista + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -39,13 +39,13 @@ namespace DAO
 
 
         public Sala getById(int id) {
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM sala where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM sala where SalaId = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Sala sala = new Sala(
-                
-                    Convert.ToInt32(dataRow["id"]),
+
+                    Convert.ToInt32(dataRow["SalaId"]),
                     Convert.ToInt32(dataRow["sjediste"]),
                     Convert.ToInt32(dataRow["kapacitet"]),
                     null
@@ -69,7 +69,7 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Sala sala = new Sala(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["SalaId"]),
                     Convert.ToInt32(dataRow["sjediste"]),
                     Convert.ToInt32(dataRow["kapacitet"]),
                     null
@@ -87,8 +87,8 @@ namespace DAO
             int kapacitet = sala.Kapacitet;
             List<int> lista = null;
 
-            string exec = "UPDATE film SET id = '" + id+ "', sjedite = " + sjediste+ "kapacitet ="+kapacitet+ "sjedista= "+ lista;
-            exec += " WHERE id = " + id;
+            string exec = "UPDATE film SET SalaId = '" + id + "', sjedite = " + sjediste + "kapacitet =" + kapacitet + "sjedista= " + lista;
+            exec += " WHERE SalaId = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return sala;
@@ -99,7 +99,7 @@ namespace DAO
             int id = sala.ID;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM sala WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM sala WHERE SalaId = " + id);
 
         }
 

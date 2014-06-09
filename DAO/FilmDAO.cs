@@ -41,7 +41,7 @@ namespace DAO
             int sifra = film.Sifra;
 
             string exec = "UPDATE film SET naziv = '" + naziv + "'naziv, sifra = " + sifra;
-            exec += " WHERE id = " + id;
+            exec += " WHERE FilmId = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return film;
@@ -52,19 +52,19 @@ namespace DAO
             int id = film.ID;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM film WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM film WHERE FilmId = " + id);
 
         }
 
         public Film getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM dbo.Film where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM dbo.Film where FilmId = " + id);
 
             foreach(DataRow dataRow in data.Tables[0].Rows)
             {
                 Film film = new Film(
-                    Convert.ToInt32(dataRow["id"]), 
+                    Convert.ToInt32(dataRow["FilmId"]), 
                     Convert.ToString(dataRow["naziv"]), 
                     Convert.ToInt32(dataRow["sifra"])
                 );
@@ -85,7 +85,7 @@ namespace DAO
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Film film = new Film(
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["FilmId"]),
                     Convert.ToString(dataRow["naziv"]),
                     Convert.ToInt32(dataRow["sifra"])
                 );

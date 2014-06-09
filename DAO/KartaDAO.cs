@@ -23,7 +23,7 @@ namespace DAO
         {
 
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("INSERT INTO karta (Id, ProjekcijaID, Fakturisao, Odobrio, Sifra, Vrijeme, ClanID, ObicniKupacID)");
+            QueryBuilder.Append("INSERT INTO karta (KartaID, ProjekcijaID, Fakturisao, Odobrio, Sifra, Vrijeme, ClanID, ObicniKupacID)");
             QueryBuilder.Append("VALUES ( " + karta.Id + ", "+karta.Termin+ ","+ karta.Prodavac+ ","+ karta.Menadzer+",");
             QueryBuilder.Append(+ karta.Sifra + "," + karta.Vrijeme+", ");
             if (karta.Kupac.GetType()==typeof(Clan))
@@ -47,15 +47,15 @@ namespace DAO
             QueryBuilder.Append("UPDATE Karta AS k ");
       
             QueryBuilder.Append("SET k.ProjekcijaID = " + karta.Termin + ", ");
-            QueryBuilder.Append(" k.Fakturisao = " + karta.Prodavac + ", ");
-            QueryBuilder.Append(" k.Odobrio = " + karta.Menadzer + ", ");
+            QueryBuilder.Append(" k.Fakturisao = " + karta.Prodavac.Id_uposlenika + ", ");
+            QueryBuilder.Append(" k.Odobrio = " + karta.Menadzer.Id_uposlenika + ", ");
             QueryBuilder.Append(" k.Sifra = " + karta.Sifra + ", ");
             QueryBuilder.Append(" k.Vrijeme = " + karta.Vrijeme + ", ");
 
            if(karta.Kupac.GetType()==typeof(Clan) )
                QueryBuilder.Append(" k.ClanID = " + karta.Kupac.ID +" , k.ObicniKupacID= "+ null);
            else QueryBuilder.Append(" k.ClanID = " + null + " , k.ObicniKupacID= " + karta.Kupac.ID);
-           QueryBuilder.Append(" WHERE k.Id= "+ karta.Id);
+           QueryBuilder.Append(" WHERE k.KartaId= "+ karta.Id);
 
            return karta;
             
@@ -66,15 +66,15 @@ namespace DAO
             int id = karta.Id;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM menadzer WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM karta WHERE kartaID = " + id);
         }
 
         public Karta getById(int id)
         {
             
             StringBuilder QueryBuilder = new StringBuilder();
-           QueryBuilder.Append("SELECT * FROM Karta AS k, Uposlenik u, Kupac AS kup, Projekcija AS termin WHERE k.Id = " + id);
-         QueryBuilder.Append("AND k.ProjekcijaID=termin.Id AND k.Fakturisao=u.Id AND k.Odobrio=u.Id AND k.") ;
+           QueryBuilder.Append("SELECT * FROM Karta AS k, Uposlenik u, Kupac AS kup, Projekcija AS termin WHERE k.KartaId = " + id);
+           QueryBuilder.Append("AND k.ProjekcijaID=termin.ProjekcijaID AND k.Fakturisao=u.UposlenikId AND k.Odobrio=u.UposlenikId") ;
 
             string query = QueryBuilder.ToString();
 
@@ -90,7 +90,7 @@ namespace DAO
                 {
 		   k =  new ObicniKupac
 			    (
-                                Convert.ToInt32(dataRow["Id"]),
+                                Convert.ToInt32(dataRow["ObicniKupacID"]),
                                 Convert.ToInt32(dataRow["Kod"]),
                                 Convert.ToString(dataRow["Ime"]),
                                 Convert.ToString(dataRow["Prezime"])
@@ -100,8 +100,8 @@ namespace DAO
 		{
 		    k = new Clan
 			    (
-                                   Convert.ToInt32(dataRow["Id"]),
-                                      Convert.ToInt32(dataRow["Kod"]),
+                                   Convert.ToInt32(dataRow["ClanID"]),
+                                      Convert.ToString(dataRow["Sifra"]),
                                       Convert.ToDateTime(dataRow["Clanstvo "]), 
                                    Convert.ToString(dataRow["Ime"]),
                                     Convert.ToString(dataRow["Prezime"])
@@ -110,7 +110,7 @@ namespace DAO
              
               
                 Karta karta = new Karta(
-                    Convert.ToInt32(dataRow["Id"]),
+                    Convert.ToInt32(dataRow["KartaID"]),
                     Convert.ToInt32(dataRow["Sifra"]),
                     Convert.ToDateTime(dataRow["Vrijeme"]),
                     new Menadzer(
@@ -119,7 +119,7 @@ namespace DAO
                    Convert.ToString(dataRow["Ime"])   , 
                      Convert.ToString(dataRow["Prezime"])   , 
                        Convert.ToString(dataRow["Jmbg"])   , 
-                         Convert.ToInt32(dataRow["Id"])   , 
+                         Convert.ToInt32(dataRow["Uposlenik"])   , 
                            Convert.ToDouble(dataRow["Koeficijent"])   
                                                                ),
                     //string pult, string ime, string prezime, string jmbg, int id, double koeficijent
@@ -127,11 +127,11 @@ namespace DAO
                    Convert.ToString(dataRow["Ime"])   , 
                      Convert.ToString(dataRow["Prezime"])   , 
                        Convert.ToString(dataRow["Jmbg"])   , 
-                         Convert.ToInt32(dataRow["Id"])   , 
+                         Convert.ToInt32(dataRow["Uposlenik"])   , 
                            Convert.ToDouble(dataRow["Koeficijent"])   ),
                       k,
                       
-                        new Projekcija( Convert.ToInt32(dataRow["Id"]), Convert.ToDateTime("Pocetak"), Convert.ToDateTime("Kraj"),
+                        new Projekcija( Convert.ToInt32(dataRow["Projekcija"]), Convert.ToDateTime("Pocetak"), Convert.ToDateTime("Kraj"),
                                  Convert.ToDouble("Cijena"), new Film(), new Sala())
                 
                 );
@@ -146,7 +146,8 @@ namespace DAO
         {
 
             StringBuilder QueryBuilder = new StringBuilder();
-            QueryBuilder.Append("SELECT * FROM Karta AS k, ProdavacKarata AS pK, Kupac AS kup, Projekcija AS termin WHERE k.Id = ");
+            QueryBuilder.Append("SELECT * FROM Karta AS k, Uposlenik u, Kupac AS kup, Projekcija AS termin");
+            QueryBuilder.Append(" WHERE k.ProjekcijaID=termin.ProjekcijaID AND k.Fakturisao=u.UposlenikId AND k.Odobrio=u.UposlenikId");
 
             string query = QueryBuilder.ToString();
 
@@ -164,7 +165,7 @@ namespace DAO
                 {
                     k = new ObicniKupac
                          (
-                                         Convert.ToInt32(dataRow["Id"]),
+                                         Convert.ToInt32(dataRow["ObicniKupacID"]),
                                          Convert.ToInt32(dataRow["Kod"]),
                                          Convert.ToString(dataRow["Ime"]),
                                          Convert.ToString(dataRow["Prezime"])
@@ -174,15 +175,15 @@ namespace DAO
                 {
                     k = new Clan
                         (
-                                           Convert.ToInt32(dataRow["Id"]),
-                                              Convert.ToInt32(dataRow["Kod"]),
+                                           Convert.ToInt32(dataRow["ClanID"]),
+                                              Convert.ToString(dataRow["Sifra"]),
                                               Convert.ToDateTime(dataRow["Clanstvo "]),
                                            Convert.ToString(dataRow["Ime"]),
                                             Convert.ToString(dataRow["Prezime"])
                         );
 
                     Karta karta = new Karta(
-                       Convert.ToInt32(dataRow["Id"]),
+                       Convert.ToInt32(dataRow["KartaID"]),
                        Convert.ToInt32(dataRow["Sifra"]),
                        Convert.ToDateTime(dataRow["Vrijeme"]),
                        new Menadzer(
@@ -191,18 +192,18 @@ namespace DAO
                       Convert.ToString(dataRow["Ime"]),
                         Convert.ToString(dataRow["Prezime"]),
                           Convert.ToString(dataRow["Jmbg"]),
-                            Convert.ToInt32(dataRow["Id"]),
+                            Convert.ToInt32(dataRow["Uposlenik"]),
                               Convert.ToDouble(dataRow["Koeficijent"])
                                                                   ),
                        new ProdavacKarata(Convert.ToString(dataRow["Telefon"]),
                       Convert.ToString(dataRow["Ime"]),
                         Convert.ToString(dataRow["Prezime"]),
                           Convert.ToString(dataRow["Jmbg"]),
-                            Convert.ToInt32(dataRow["Id"]),
+                            Convert.ToInt32(dataRow["UposlenikID"]),
                               Convert.ToDouble(dataRow["Koeficijent"])),
                          k,
 
-                           new Projekcija(Convert.ToInt32(dataRow["Id"]), Convert.ToDateTime("Pocetak"), Convert.ToDateTime("Kraj"),
+                           new Projekcija(Convert.ToInt32(dataRow["Projekcija"]), Convert.ToDateTime("Pocetak"), Convert.ToDateTime("Kraj"),
                                     Convert.ToDouble("Cijena"), new Film(), new Sala())
 
                    );

@@ -23,7 +23,7 @@ namespace DAO
 
         public long create(ProdavacKarata prodavacKarata)
         {
-            string exec = "INSERT INTO prodavacKarata VALUES(" + prodavacKarata.Telefon + "', " + prodavacKarata.Ime + ", '" + prodavacKarata.Prezime + "', " + prodavacKarata.Jmbg + ", '" + prodavacKarata.Id_uposlenika + "', " + prodavacKarata.Koeficijent + ")";
+            string exec = "INSERT INTO Uposlenik VALUES(" + prodavacKarata.Telefon + "', " + prodavacKarata.Ime + ", '" + prodavacKarata.Prezime + "', " + prodavacKarata.Jmbg + ", '" + prodavacKarata.Id_uposlenika + "', " + prodavacKarata.Koeficijent + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -44,8 +44,8 @@ namespace DAO
             int id = prodavacKarata.Id_uposlenika;
             double koeficijent = prodavacKarata.Koeficijent;
 
-            string exec = "UPDATE prodavacKarata SET telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
-            exec += " WHERE id = " + id;
+            string exec = "UPDATE Uposlenik SET telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
+            exec += " WHERE UposlenikID = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return prodavacKarata;
@@ -56,14 +56,14 @@ namespace DAO
             int id = prodavacKarata.Id_uposlenika;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM prodavacKarata WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Uposlenik WHERE UposlenikID = " + id);
 
         }
 
         public ProdavacKarata getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM prodavacKarata where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik where UposlenikID = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
@@ -72,7 +72,7 @@ namespace DAO
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"]),
                     Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["koeficijent"])
                 );
 
@@ -94,7 +94,7 @@ namespace DAO
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"]),
                     Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["koeficijent"])
                 );
 

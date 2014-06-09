@@ -113,7 +113,7 @@ namespace Models
             this.pocetak = pocetak;
             this.kraj = kraj;
             this.cijena = cijena;
-
+            this.film = film;
             this.sala = sala;
         }
 

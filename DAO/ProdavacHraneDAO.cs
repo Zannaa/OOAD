@@ -44,8 +44,8 @@ namespace DAO
             int id = prodavacHrane.Id_uposlenika;
             double koeficijent = prodavacHrane.Koeficijent;
 
-            string exec = "UPDATE prodavacKarata SET pult = '" + pult + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
-            exec += " WHERE id = " + id;
+            string exec = "UPDATE Uposlenik SET pult = '" + pult + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
+            exec += " WHERE UposlenikID = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return prodavacHrane;
@@ -56,14 +56,14 @@ namespace DAO
             int id = prodavacHrane.Id_uposlenika;
 
 
-            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM prodavacHrane WHERE id = " + id);
+            int affectedRows = manager.ExecuteSqlCommandToInt("DELETE FROM Uposlenik WHERE UposlenikID = " + id);
 
         }
 
         public ProdavacHrane getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM prodavacHrane where id = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik where UposlenikID = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
@@ -72,7 +72,7 @@ namespace DAO
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"]),
                     Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["koeficijent"])
                 );
 
@@ -84,7 +84,7 @@ namespace DAO
         }
         public List<ProdavacHrane> getAll()
         {
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM prodavacHrane");
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik");
 
             List<ProdavacHrane> prodavaciHrane = new List<ProdavacHrane>();
             foreach (DataRow dataRow in data.Tables[0].Rows)
@@ -94,7 +94,7 @@ namespace DAO
                     Convert.ToString(dataRow["ime"]),
                     Convert.ToString(dataRow["prezime"]),
                     Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["id"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
                     Convert.ToDouble(dataRow["koeficijent"])
                 );
 
