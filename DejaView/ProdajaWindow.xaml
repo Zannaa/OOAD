@@ -25,7 +25,7 @@
                     <GroupBox Header="Projekcija" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="118" Width="270" Grid.Column="3" Grid.ColumnSpan="4">
                         <Grid HorizontalAlignment="Left" Height="128" Margin="0,-10,-2,-22" VerticalAlignment="Top" Width="260">
                             <Label Content="Vrijeme" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.962"/>
-                            <ListBox x:Name="___listatermini_"  HorizontalAlignment="Left" Height="64" Margin="10,41,0,-10" VerticalAlignment="Top" Width="111" SelectionChanged="ListBox_SelectionChanged_1"/>
+                            <ListBox x:Name="___listatermini_"  HorizontalAlignment="Left" Height="64" Margin="31,41,0,0" VerticalAlignment="Top" Width="111" SelectionChanged="ListBox_SelectionChanged_1"/>
                         </Grid>
                     </GroupBox>
                     <Grid HorizontalAlignment="Left" Height="63" Margin="0,150,0,0" VerticalAlignment="Top" Width="70" Grid.Column="5">

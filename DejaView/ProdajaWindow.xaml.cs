@@ -212,9 +212,9 @@ namespace DejaView
             MessageBox.Show(datum);
             foreach (Projekcija p in projekcije) {
               //  if (p.Pocetak.ToString("dd/mm/yyyy") == datum) {
-                { if(2==2)
+                { if(3==3)
                     filmovi.Add(p.Film);
-                
+                      
                 }  }
                 ListaFilmovaUProdaji.ItemsSource = filmovi; 
               }
