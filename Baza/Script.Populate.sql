@@ -11,7 +11,6 @@ Post-Deployment Script Template
 */
 
 
-
 INSERT INTO Film VALUES ('The A-Team', 59932)
 INSERT INTO Film VALUES ('Shutter Island', 65618)
 INSERT INTO Film VALUES ('A Beuatiful Mind', 17895)
@@ -72,3 +71,4 @@ INSERT INTO PrehrambeniProdukt VALUES ('pop-corn b', 2)
 INSERT INTO PrehrambeniProdukt VALUES ('pop-corn s', 1)
 INSERT INTO PrehrambeniProdukt VALUES ('juice', 2.5)
 INSERT INTO PrehrambeniProdukt VALUES ('chips', 2.5)
+

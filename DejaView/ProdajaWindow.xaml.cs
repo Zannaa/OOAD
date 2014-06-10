@@ -58,20 +58,26 @@ namespace DejaView
             }
         }
 
-
+        private ProjekcijaDAO pdao = new ProjekcijaDAO();
+        private List<Projekcija> projekcije = new List<Projekcija>();
+        
 
 
         public ProdajaWindow()
         {
 
-
+         
 
             InitializeComponent();
+
+            ___Datump_.Text = "bla";
 
             FilmDAO fdao = new FilmDAO();
             ProjekcijaDAO pdao = new ProjekcijaDAO();
 
-            ListaFilmovaUProdaji.ItemsSource = fdao.getAll();
+            projekcije = pdao.getAll();
+
+        /*  ListaFilmovaUProdaji.ItemsSource = fdao.getAll();
             ListaFilmovaZaRezervaciju.ItemsSource = fdao.getAll();
 
             /*   List<Projekcija> projekcije = new List<Projekcija>();
@@ -107,35 +113,42 @@ namespace DejaView
 
 
         private void ListaFilmovaUProdaji_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
         {
+           string f = ListaFilmovaUProdaji.SelectedValue.ToString();
+      
 
 
+            List<Projekcija> termini = new List<Projekcija>();
 
-            List<string> termini = new List<string>();
 
-            ProjekcijaDAO pdao = new ProjekcijaDAO();
-            List<Projekcija> projekcije = new List<Projekcija>();
+            
+          /*  if (!KupovinaTermini.Items.IsEmpty)
+                KupovinaTermini.Items.Clear(); */
+            List<string> datumi = new List<string>();
 
-            /*  projekcije = pdao.getAll();
-              MessageBox.Show(projekcije[1].Film.Naziv);
-           
-              /*foreach (Projekcija p in projekcije) {
-                 string  f=ListaFilmovaUProdaji.SelectedValue.ToString();
+              foreach (Projekcija p in projekcije) {
+                 
                   if (p.Film.Naziv ==f)
                   { 
-                      //string sDateTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
-                      string pr=p.Pocetak.ToString ("hh:mm:ss") ;
-                      termini.Add(pr);
+                      ///ring sDateTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")
+                    //  string pr=p.Pocetak.ToString ("hh:mm:ss") ;
+                      termini.Add(p);
+                      datumi.Add(p.Pocetak.ToString("dd:mm:yyy"));
                   }
               }
-              KupovinaTermini.ItemsSource = termini; */
+
+              ___listatermini_.ItemsSource = termini; 
+
+
+           
         }
 
       
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            string sifra = RandomString(15);
+           /* string sifra = RandomString(15);
             MessageBox.Show(sifra);
             
             Clan c = new Clan(sifra, DateTime.Now, Imec.Text, Prezimec.Text);
@@ -143,7 +156,7 @@ namespace DejaView
             ClanDAO cl = new ClanDAO();
 
             long i = cl.create(c);
-            MessageBox.Show(Convert.ToString(i)); 
+            MessageBox.Show(Convert.ToString(i));  */
 
         }
 
@@ -158,9 +171,62 @@ namespace DejaView
 
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ___Datump__DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {  
+                
+
+             /*List<Film> filmovi=new List<Film>() ;
+            string datum=(Convert.ToDateTime (___Datump_.SelectedDate)).ToString("dd:mm:yyyy") ;
+            foreach (Projekcija p in projekcije) {
+                if (p.Pocetak.ToString("dd.mm.yyyy") == datum) {
+                    filmovi.Add(p.Film);
+                
+                }
+                ListaFilmovaUProdaji.ItemsSource = filmovi; 
+              }*/
+            
+            
+        }
+
+        private void ___Datump__SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {   
+            List<Film> filmovi=new List<Film>() ;
+            string dp = projekcije[1].Pocetak.ToString("dd/mm/yyyy");
+           // MessageBox.Show(dp );
+            string datum=(Convert.ToDateTime (___Datump_.SelectedDate)).ToString("dd/mm/yyyy") ;
+            MessageBox.Show(datum);
+            foreach (Projekcija p in projekcije) {
+              //  if (p.Pocetak.ToString("dd/mm/yyyy") == datum) {
+                { if(2==2)
+                    filmovi.Add(p.Film);
+                
+                }  }
+                ListaFilmovaUProdaji.ItemsSource = filmovi; 
+              }
+            
+        
+
+        }
+
 
 
 
     }
-}
+
+
 

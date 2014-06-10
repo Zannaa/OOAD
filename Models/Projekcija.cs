@@ -132,6 +132,12 @@ namespace Models
 
         }
 
+        public override string ToString()
+        {
+            return this.Pocetak.TimeOfDay.ToString();
+        }
+
+
         #endregion
 
 
