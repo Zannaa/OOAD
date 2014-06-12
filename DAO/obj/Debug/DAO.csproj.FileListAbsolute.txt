@@ -79,3 +79,12 @@ C:\Users\Zana Tatar\Desktop\OOAD projekt\OOAD\DAO\bin\Debug\Models.pdb
 C:\Users\Zana Tatar\Desktop\OOAD projekt\OOAD\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\OOAD projekt\OOAD\DAO\obj\Debug\DAO.dll
 C:\Users\Zana Tatar\Desktop\OOAD projekt\OOAD\DAO\obj\Debug\DAO.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\DAO.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\DAO.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\Models.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\Models.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.pdb

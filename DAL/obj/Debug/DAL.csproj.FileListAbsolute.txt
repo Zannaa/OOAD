@@ -30,3 +30,8 @@ C:\Users\Zana Tatar\Desktop\New folder\OOAD\DAL\bin\Debug\DAL.pdb
 C:\Users\Zana Tatar\Desktop\New folder\OOAD\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\New folder\OOAD\DAL\obj\Debug\DAL.dll
 C:\Users\Zana Tatar\Desktop\New folder\OOAD\DAL\obj\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAL\bin\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAL\bin\Debug\DAL.pdb
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAL\obj\Debug\DAL.dll
+C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAL\obj\Debug\DAL.pdb

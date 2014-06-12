@@ -19,11 +19,13 @@ namespace DAO
         {
             this.manager = DatabaseManager.Instance;
         }
-        
+
 
         public long create(Clan clan)
         {
-            string exec = "INSERT INTO Clan VALUES(" + clan.Ime + ", " + clan.Prezime + ", '" + clan.Sifra + "', '" + clan.Clanstvo + ")";
+            // insert into Clan VALUES ('string', 'string')
+            //  "INSERT INTO film VALUES('" + film.Naziv + "', " + film.Sifra + ")";
+            string exec = "INSERT INTO Clan VALUES('" + clan.Ime + "', '" + clan.Prezime + "', '" + clan.Sifra + "', '" + clan.Clanstvo + "')";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -42,9 +44,9 @@ namespace DAO
             DateTime clanstvo = clan.Clanstvo;
             string ime = clan.Ime;
             string prezime = clan.Prezime;
-            
-            string exec = "UPDATE clan SET ClanId = " + id + ", sifra = " + sifra + ", clanstvo = " + clanstvo + ", ime = '" + ime + "', prezime = '" + prezime + "'";
-            exec += " WHERE id = " + id;
+
+            string exec = "UPDATE Clan SET   sifra = '" + sifra + "', clanstvo = '" + clanstvo + "', ime = '" + ime + "', prezime = '" + prezime + "'";
+            exec += " WHERE ClanId = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return clan;

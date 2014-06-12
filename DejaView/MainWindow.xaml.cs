@@ -95,26 +95,65 @@ namespace DejaView
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            user = text1.Text;
-            pass = text2.Password;
+            if (text1.Text == " " || text2.Password == " ") poruka.Text = "Niste unijeli sva polja!";
 
-            if (r1.IsChecked == true)
-            {
 
-                ProdavacKarata p = new ProdavacKarata();
-                ProdavacKarataDAO d = new ProdavacKarataDAO();
-                p = d.getById(Convert.ToInt32(user));
-                //  if (p == null) MessageBox.Show("Ne postoji korisnik!");
-                if (p.Jmbg == pass && p != null) sesija = "logovan";
-                ProdajaWindow w = new ProdajaWindow();
-                w.Show();
-
-            }
             else
             {
-                MainWindow m = new MainWindow();
-                m.Show();
+                user = text1.Text;
+                pass = text2.Password;
 
+                if (r1.IsChecked == true)
+                {
+
+                    ProdavacKarata p = new ProdavacKarata();
+                    ProdavacKarataDAO d = new ProdavacKarataDAO();
+                    p = d.getById(Convert.ToInt32(user));
+                    //  if (p == null) MessageBox.Show("Ne postoji korisnik!");
+                    if (p.Jmbg == pass && p != null) sesija = "logovan";
+                    ProdajaWindow w = new ProdajaWindow(Convert.ToInt32(user));
+                    w.Show();
+
+
+                }
+
+                else if (r2.IsChecked == true)
+                {
+                    ProdavacHrane p = new ProdavacHrane();
+                    ProdavacHraneDAO d = new ProdavacHraneDAO();
+                    p = d.getById(Convert.ToInt32(user));
+                    if (p.Jmbg == pass && p != null) sesija = "logovan";
+                    ProdajaHrane prodaja = new ProdajaHrane(Convert.ToInt32(user));
+                    prodaja.Show();
+                }
+
+                else if (r3.IsChecked == true)
+                {
+                    FinansijskiMenadzer p = new FinansijskiMenadzer();
+                    FinansijskiMenadzerDAO d = new FinansijskiMenadzerDAO();
+                    p = d.getById(Convert.ToInt32(user));
+                    if (p.Jmbg == pass && p != null) sesija = "logovan";
+
+
+
+                }
+                else if (r4.IsChecked == true)
+                {
+                    Menadzer p = new Menadzer();
+                    MenadzerDAO d = new MenadzerDAO();
+                    p = d.getById(Convert.ToInt32(user));
+                    if (p.Jmbg == pass && p != null) sesija = "logovan";
+
+
+
+                }
+
+                else
+                {
+                    MainWindow m = new MainWindow();
+                    m.Show();
+
+                }
             }
         }
 

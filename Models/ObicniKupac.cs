@@ -16,7 +16,7 @@ namespace Models
         /// <summary>
         /// Sifra evidencije kupca
         /// </summary>
-        public int Sifra { get; set; }
+        public string Sifra { get; set; }
         #endregion
 
         #region Constructors
@@ -35,7 +35,7 @@ namespace Models
         /// <param name="sifra">Sifra evidencije kupca</param>
         /// <param name="ime">Ime kupca</param>
         /// <param name="prezime">Prezime kupca</param>
-        public ObicniKupac(int id, int sifra, string ime, string prezime)
+        public ObicniKupac(int id, string sifra, string ime, string prezime)
         {
             this.Id = id;
             this.Sifra = sifra;
@@ -49,7 +49,7 @@ namespace Models
         /// <param name="sifra">Sifra evidencije kupca</param>
         /// <param name="ime">Ime kupca</param>
         /// <param name="prezime">Prezime kupca</param>
-        public ObicniKupac(int sifra, string ime, string prezime)
+        public ObicniKupac(string sifra, string ime, string prezime)
         {
             this.Sifra = sifra;
             this.Ime = ime;

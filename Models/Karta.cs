@@ -9,6 +9,9 @@ namespace Models
     public class Karta : Faktura
     {
         #region Properties
+
+        public string Sifra { get; set; }
+
         /// <summary>
         /// Prodavac karte
         /// </summary>
@@ -43,7 +46,7 @@ namespace Models
         /// <param name="prodavac">Klasa prodavaca karte</param>
         /// <param name="kupac">Kupac karte</param>
         /// <param name="termin">Termin filma</param>
-        public Karta(int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin )
+        public Karta(string sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin)
         {
             this.Sifra = sifra;
             this.Vrijeme = vrijeme;
@@ -63,7 +66,7 @@ namespace Models
         /// <param name="prodavac">Klasa prodavaca karte</param>
         /// <param name="kupac">Kupac karte</param>
         /// <param name="termin">Termin filma</param>
-        public Karta(int id, int sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin)
+        public Karta(int id, string sifra, DateTime vrijeme, Menadzer menadzer, ProdavacKarata prodavac, Kupac kupac, Projekcija termin)
         {
             this.Id = id;
             this.Sifra = sifra;
