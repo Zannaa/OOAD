@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Dejaview </title>
+<link rel="stylesheet" type="text/css" href="game.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="models.js"></script>
+
+</head>
+
+<body style="background-image:url('background.png')">
+	<div class="alien">
+		<img src="alien.gif">
+	</div>
+	
+	<div id="score">
+	500
+	</div>
+	
+	<div id = "currentWord">
+	<span></span>
+	</div>
+	
+	<div id="enemy1" class="smallalien">
+		<span style = "margin: 30px"> annihilation </span>
+		<img src="alien.gif" width="100%" height="100%">
+	</div>
+	
+	<div id="enemy2" class="smallalien">
+		<span style = "margin: 30px"> word </span>
+		<img src="alien.gif" width="100%" height="100%">
+	</div>
+	
+	<div id="enemy3" class="smallalien">
+		<span style = "margin: 30px"> destroy </span>
+		<img src="alien.gif" width="100%" height="100%">
+	</div>
+	
+	<div id="enemy4" class="smallalien">
+		<span style = "margin: 30px"> earth </span>
+		<img src="alien.gif" width="100%" height="100%">
+	</div>
+	
+	<div id="player">
+		<img src="player.png" width="100%" height="100%">
+	</div>
+	
+	<script>
+	
+	var level = new LevelInstance();
+	
+	var dif = +prompt("Choose difficulty from 1 to 7", "1");
+	
+	var enemyViewModel1 = $("#enemy1");
+	var enemyViewModel2 = $("#enemy2");
+	var enemyViewModel3 = $("#enemy3");
+	var enemyViewModel4 = $("#enemy4");
+	
+	var currentWord = $("#currentWord");
+	
+	var score = $("#score");
+	
+	$("body").keypress(function (event)
+	{
+		var c = String.fromCharCode(event.which)
+		if (event.which == 13)
+			currentWord.text(" ");
+		else
+		{
+			currentWord.text(currentWord.text() + c);
+			level.currentLetter = c;
+			level.notify();
+			score.text(level.score);
+		}
+		
+		
+	});	
+
+	level.Aliens.push(Mothership.create(dif));
+	level.Aliens.push(Mothership.create(dif));
+	level.Aliens.push(Mothership.create(dif));
+	level.Aliens.push(Mothership.create(dif));
+	
+	enemyViewModel1.children().text(level.Aliens[0].FullName);
+	enemyViewModel2.children().text(level.Aliens[1].FullName);
+	enemyViewModel3.children().text(level.Aliens[2].FullName);
+	enemyViewModel4.children().text(level.Aliens[3].FullName);
+	
+	
+
+	enemyViewModel1.animate({
+		'top': '+=500px',
+	}, 40000);
+	
+	enemyViewModel2.animate({
+		'top': '+=500px',
+	}, 40000);
+	
+	enemyViewModel3.animate({
+		'top': '+=500px',
+	}, 40000);
+	
+	enemyViewModel4.animate({
+		'top': '+=500px',
+	}, 40000);
+	
+	
+
+	</script>
+</body>
+</html>
