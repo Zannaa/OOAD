@@ -59,7 +59,7 @@ namespace DAO
         public RadnoVrijeme getById(int id)
         {
 
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM finansijskiMenadzer where RadnoVrijemeId = " + id);
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM RadnoVrijeme where RadnoVrijemeId = " + id);
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
@@ -71,12 +71,26 @@ namespace DAO
                 return radnoVrijeme;
             }
 
-          
+
             return null;
         }
         public List<RadnoVrijeme> getAll()
         {
-            return null;
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM RadnoVrijeme");
+
+            List<RadnoVrijeme> vremena = new List<RadnoVrijeme>();
+
+            foreach (DataRow dataRow in data.Tables[0].Rows)
+            {
+                RadnoVrijeme radnoVrijeme = new RadnoVrijeme(
+                    Convert.ToDateTime(dataRow["pocetak"]),
+                    Convert.ToDateTime(dataRow["kraj"])
+                );
+
+                vremena.Add(radnoVrijeme);
+            }
+
+            return vremena;
         }
     }
 }

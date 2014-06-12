@@ -54,7 +54,7 @@ namespace DAO
             StringBuilder QueryBuilder = new StringBuilder();
             QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u WHERE o.ObracunId = " + id);
             QueryBuilder.Append(" AND u.UposlenikID = o.UposlenikID");
-            
+
 
             string query = QueryBuilder.ToString();
 
@@ -62,6 +62,42 @@ namespace DAO
 
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
+                Uposlenik uposlenik;
+                if (dataRow["u.Budzet"] != null)
+                {
+                    uposlenik = new FinansijskiMenadzer(
+                     Convert.ToDouble(dataRow["Budzet"]),
+                     Convert.ToString(dataRow["Telefon"]),
+                     Convert.ToString(dataRow["Ime"]),
+                     Convert.ToString(dataRow["Prezime"]),
+                     Convert.ToString(dataRow["Jmbg"]),
+                     Convert.ToInt32(dataRow["UposlenikID"]),
+                     Convert.ToDouble(dataRow["Koeficijent"])
+                    );
+                }
+
+                else if (dataRow["u.Telefon"] != null)
+                {
+                    uposlenik = new ProdavacKarata(
+                     Convert.ToString(dataRow["telefon"]),
+                     Convert.ToString(dataRow["ime"]),
+                     Convert.ToString(dataRow["prezime"]),
+                     Convert.ToString(dataRow["jmbg"]),
+                     Convert.ToInt32(dataRow["UposlenikID"]),
+                     Convert.ToDouble(dataRow["koeficijent"])
+                     );
+                }
+                else
+                {
+                    uposlenik = new ProdavacHrane(Convert.ToString(dataRow["pult"]),
+                    Convert.ToString(dataRow["ime"]),
+                    Convert.ToString(dataRow["prezime"]),
+                    Convert.ToString(dataRow["jmbg"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
+                    Convert.ToDouble(dataRow["koeficijent"])
+                        );
+                }
+
                 Obracun obracun = new Obracun(
                     Convert.ToInt32(dataRow["ObracunId"]),
                     new FinansijskiMenadzer(
@@ -74,13 +110,7 @@ namespace DAO
                     Convert.ToDouble(dataRow["Koeficijent"])
                         ),
                     Convert.ToDateTime(dataRow["Datum"]),
-                    new Uposlenik(
-                        Convert.ToString(dataRow["Ime"]),
-                        Convert.ToString(dataRow["Prezime"]),
-                        Convert.ToString(dataRow["Jmbg"]),
-                        Convert.ToInt32(dataRow["UposlenikID"]),
-                        Convert.ToDouble(dataRow["Koeficijent"])
-                        )
+                    uposlenik
                 );
 
                 return obracun;
@@ -90,19 +120,55 @@ namespace DAO
         }
 
         public List<Obracun> getAll()
-          {
-              StringBuilder QueryBuilder = new StringBuilder();
-              QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u");
-              QueryBuilder.Append("  u.UposlenikId = o.UposlenikID");
+        {
+            StringBuilder QueryBuilder = new StringBuilder();
+            QueryBuilder.Append("SELECT * FROM Obracun AS o, Uposlenik AS u");
+            QueryBuilder.Append("  u.UposlenikId = o.UposlenikID");
 
-              string query = QueryBuilder.ToString();
+            string query = QueryBuilder.ToString();
 
-              DataSet data = manager.ExecuteSqlCommandToDataSet(query);
+            DataSet data = manager.ExecuteSqlCommandToDataSet(query);
 
-              List<Obracun> obracuni = new List<Obracun>();
+            List<Obracun> obracuni = new List<Obracun>();
 
-              foreach (DataRow dataRow in data.Tables[0].Rows)
-              {
+            foreach (DataRow dataRow in data.Tables[0].Rows)
+            {
+                Uposlenik uposlenik;
+                if (dataRow["u.Budzet"] != null)
+                {
+                    uposlenik = new FinansijskiMenadzer(
+                     Convert.ToDouble(dataRow["Budzet"]),
+                     Convert.ToString(dataRow["Telefon"]),
+                     Convert.ToString(dataRow["Ime"]),
+                     Convert.ToString(dataRow["Prezime"]),
+                     Convert.ToString(dataRow["Jmbg"]),
+                     Convert.ToInt32(dataRow["UposlenikID"]),
+                     Convert.ToDouble(dataRow["Koeficijent"])
+                    );
+                }
+
+                else if (dataRow["u.Telefon"] != null)
+                {
+                    uposlenik = new ProdavacKarata(
+                     Convert.ToString(dataRow["telefon"]),
+                     Convert.ToString(dataRow["ime"]),
+                     Convert.ToString(dataRow["prezime"]),
+                     Convert.ToString(dataRow["jmbg"]),
+                     Convert.ToInt32(dataRow["UposlenikID"]),
+                     Convert.ToDouble(dataRow["koeficijent"])
+                     );
+                }
+                else
+                {
+                    uposlenik = new ProdavacHrane(Convert.ToString(dataRow["pult"]),
+                    Convert.ToString(dataRow["ime"]),
+                    Convert.ToString(dataRow["prezime"]),
+                    Convert.ToString(dataRow["jmbg"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
+                    Convert.ToDouble(dataRow["koeficijent"])
+                        );
+                }
+
                 Obracun obracun = new Obracun(
                     Convert.ToInt32(dataRow["ObracunId"]),
                     new FinansijskiMenadzer(
@@ -115,18 +181,12 @@ namespace DAO
                     Convert.ToDouble(dataRow["Koeficijent"])
                         ),
                     Convert.ToDateTime(dataRow["Datum"]),
-                    new Uposlenik(
-                        Convert.ToString(dataRow["Ime"]),
-                        Convert.ToString(dataRow["Prezime"]),
-                        Convert.ToString(dataRow["Jmbg"]),
-                        Convert.ToInt32(dataRow["UposlenikID"]),
-                        Convert.ToDouble(dataRow["Koeficijent"])
-                        )
+                    uposlenik
                 );
 
                 obracuni.Add(obracun);
-          }
-              return obracuni;
+            }
+            return obracuni;
         }
     }
 }

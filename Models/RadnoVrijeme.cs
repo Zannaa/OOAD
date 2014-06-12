@@ -69,6 +69,11 @@ namespace Models
             this.Pocetak = rv.Pocetak;
             this.Kraj = rv.Kraj;
         }
+
+        public override string ToString()
+        {
+            return "Dolazak: " + this.Pocetak + "                 " + "Odlazak: " + this.Kraj;
+        }
         #endregion
     }
 }

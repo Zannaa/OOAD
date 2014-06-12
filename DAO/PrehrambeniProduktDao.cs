@@ -24,7 +24,7 @@ namespace DAO
 
         public long create(PrehrambeniProdukt produkt)
         {
-            string exec = "INSERT INTO PrehrambeniProdukt VALUES( "+produkt.Id+", '"+ produkt.Tip + "', " + produkt.Cijena + ")";
+            string exec = "INSERT INTO PrehrambeniProdukt VALUES( '" + produkt.Tip + "', " + produkt.Cijena + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 

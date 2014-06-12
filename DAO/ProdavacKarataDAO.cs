@@ -84,21 +84,22 @@ namespace DAO
         }
         public List<ProdavacKarata> getAll()
         {
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM prodavacKarata");
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik WHERE Telefon is not null");
 
             List<ProdavacKarata> prodavaciKarata = new List<ProdavacKarata>();
             foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 ProdavacKarata prodavacKarata = new ProdavacKarata(
-                    Convert.ToString(dataRow["telefon"]),
-                    Convert.ToString(dataRow["ime"]),
-                    Convert.ToString(dataRow["prezime"]),
-                    Convert.ToString(dataRow["jmbg"]),
-                    Convert.ToInt32(dataRow["UposlenikID"]),
-                    Convert.ToDouble(dataRow["koeficijent"])
+                    Convert.ToString(dataRow["Telefon"]),
+                    Convert.ToString(dataRow["Ime"]),
+                    Convert.ToString(dataRow["Prezime"]),
+                    Convert.ToString(dataRow["Jmbg"]),
+                    Convert.ToInt32(dataRow["UposlenikId"]),
+                    Convert.ToDouble(dataRow["Koeficijent"])
                 );
 
                 prodavaciKarata.Add(prodavacKarata);
+
             }
 
             return prodavaciKarata;

@@ -19,11 +19,11 @@ namespace DAO
         {
             this.manager = DatabaseManager.Instance;
         }
-       
- 
+
+
         public long create(FinansijskiMenadzer finansijskiMenadzer)
         {
-            string exec = "INSERT INTO uposlenik VALUES('" + finansijskiMenadzer.Ime + "', '" + finansijskiMenadzer.Prezime + "', '"+finansijskiMenadzer.Jmbg +"', "  + finansijskiMenadzer.Koeficijent+ ","+null+null+null+finansijskiMenadzer.Budzet+ ")";
+            string exec = "INSERT INTO uposlenik VALUES('" + finansijskiMenadzer.Ime + "', '" + finansijskiMenadzer.Prezime + "', '" + finansijskiMenadzer.Jmbg + "', " + finansijskiMenadzer.Koeficijent + "," + null + null + null + finansijskiMenadzer.Budzet + ")";
 
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
@@ -31,7 +31,7 @@ namespace DAO
 
         public FinansijskiMenadzer read(FinansijskiMenadzer finansijskiMenadzer)
         {
-         
+
             return getById(finansijskiMenadzer.Id_uposlenika);
         }
 
@@ -45,7 +45,7 @@ namespace DAO
             int id = finansijskiMenadzer.Id_uposlenika;
             double koeficijent = finansijskiMenadzer.Koeficijent;
 
-            string exec = "UPDATE Uposlenik SET budzet = " + budzet + ", telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id +"', koeficijent = " + koeficijent;
+            string exec = "UPDATE Uposlenik SET budzet = " + budzet + ", telefon = '" + telefon + "', ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + ", id = " + id + "', koeficijent = " + koeficijent;
             exec += " WHERE UposlenikID = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
@@ -81,12 +81,31 @@ namespace DAO
                 return finansijskiMenadzer;
             }
 
-          
+
             return null;
         }
         public List<FinansijskiMenadzer> getAll()
         {
-            return null;
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik WHERE Budzet is not null");
+
+            List<FinansijskiMenadzer> fmenadzeri = new List<FinansijskiMenadzer>();
+            foreach (DataRow dataRow in data.Tables[0].Rows)
+            {
+                FinansijskiMenadzer fmenadzer = new FinansijskiMenadzer(
+                    Convert.ToDouble(dataRow["Budzet"]),
+                    Convert.ToString(dataRow["Telefon"]),
+                    Convert.ToString(dataRow["Ime"]),
+                    Convert.ToString(dataRow["Prezime"]),
+                    Convert.ToString(dataRow["Jmbg"]),
+                    Convert.ToInt32(dataRow["UposlenikID"]),
+                    Convert.ToDouble(dataRow["Koeficijent"])
+                );
+
+                fmenadzeri.Add(fmenadzer);
+
+            }
+
+            return fmenadzeri;
         }
 
     }

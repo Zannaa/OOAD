@@ -60,3 +60,8 @@ C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\Models\bin\Debug\Models.pdb
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\Models\obj\Debug\Models.dll
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\Models\obj\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD2\Models\bin\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD2\Models\bin\Debug\Models.pdb
+C:\Users\Azra\Source\Repos\OOAD2\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Azra\Source\Repos\OOAD2\Models\obj\Debug\Models.dll
+C:\Users\Azra\Source\Repos\OOAD2\Models\obj\Debug\Models.pdb

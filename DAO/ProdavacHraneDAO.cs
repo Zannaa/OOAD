@@ -84,7 +84,7 @@ namespace DAO
         }
         public List<ProdavacHrane> getAll()
         {
-            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik");
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik WHERE Pult IS NOT NULL");
 
             List<ProdavacHrane> prodavaciHrane = new List<ProdavacHrane>();
             foreach (DataRow dataRow in data.Tables[0].Rows)

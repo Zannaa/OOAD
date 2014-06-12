@@ -88,3 +88,6 @@ C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\bin\Debug\Models.pdb
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.dll
 C:\Users\Zana Tatar\Desktop\repozitorj\OOAD\DAO\obj\Debug\DAO.pdb
+C:\Users\Azra\Source\Repos\OOAD2\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Azra\Source\Repos\OOAD2\DAO\obj\Debug\DAO.dll
+C:\Users\Azra\Source\Repos\OOAD2\DAO\obj\Debug\DAO.pdb

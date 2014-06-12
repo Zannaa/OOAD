@@ -22,7 +22,7 @@ namespace DAO
 
         public long create(Menadzer menadzer)
         {
-            string exec = "INSERT INTO uposlenik VALUES('" +menadzer.Ime + ", '" + menadzer.Prezime + "', " + menadzer.Jmbg + ", " + menadzer.Koeficijent + "," + null+" , " +null+" , " + menadzer.Telefon+" , "+ null + ")";
+            string exec = "INSERT INTO uposlenik VALUES('" + menadzer.Ime + ", '" + menadzer.Prezime + "', " + menadzer.Jmbg + ", " + menadzer.Koeficijent + "," + null + " , " + null + " , " + menadzer.Telefon + " , " + null + ")";
             return manager.ExecuteSqlCommandToIntForCreate(exec);
 
         }
@@ -82,7 +82,25 @@ namespace DAO
 
         public List<Menadzer> getAll()
         {
-            return null;
+            DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM Uposlenik WHERE Telefon is not null");
+
+            List<Menadzer> menadzeri = new List<Menadzer>();
+            foreach (DataRow dataRow in data.Tables[0].Rows)
+            {
+                Menadzer menadzer = new Menadzer(
+                    Convert.ToString(dataRow["Telefon"]),
+                    Convert.ToString(dataRow["Ime"]),
+                    Convert.ToString(dataRow["Prezime"]),
+                    Convert.ToString(dataRow["Jmbg"]),
+                    Convert.ToInt32(dataRow["UposlenikId"]),
+                    Convert.ToDouble(dataRow["Koeficijent"])
+                );
+
+                menadzeri.Add(menadzer);
+
+            }
+
+            return menadzeri;
         }
 
 

@@ -37,7 +37,7 @@ namespace Models
         /// <param name="cijena">Cijena produkta</param>
         public PrehrambeniProdukt(int id, string tip, double cijena)
         {
-            this.Id = id; 
+            this.Id = id;
             this.Tip = tip;
             this.Cijena = cijena;
         }
@@ -61,6 +61,11 @@ namespace Models
             this.Id = p.Id;
             this.Tip = p.Tip;
             this.Cijena = p.Cijena;
+        }
+
+        public override string ToString()
+        {
+            return this.Tip;
         }
         #endregion
 

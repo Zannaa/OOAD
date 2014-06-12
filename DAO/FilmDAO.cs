@@ -15,10 +15,10 @@ namespace DAO
 
         private DatabaseManager manager;
 
-        public FilmDAO ()
-	    {
+        public FilmDAO()
+        {
             this.manager = DatabaseManager.Instance;
-	    }
+        }
 
         public long create(Film film)
         {
@@ -40,8 +40,8 @@ namespace DAO
             string naziv = film.Naziv;
             int sifra = film.Sifra;
 
-            string exec = "UPDATE film SET naziv = '" + naziv + "'naziv, sifra = " + sifra;
-            exec += " WHERE FilmId = " + id;
+            string exec = "UPDATE Film SET sifra = " + sifra + ", naziv = '" + naziv + "'";
+            exec += " WHERE FilmID = " + id;
 
             int affectedRows = manager.ExecuteSqlCommandToInt(exec);
             return film;
@@ -61,17 +61,17 @@ namespace DAO
 
             DataSet data = manager.ExecuteSqlCommandToDataSet("SELECT * FROM dbo.Film where FilmId = " + id);
 
-            foreach(DataRow dataRow in data.Tables[0].Rows)
+            foreach (DataRow dataRow in data.Tables[0].Rows)
             {
                 Film film = new Film(
-                    Convert.ToInt32(dataRow["FilmId"]), 
-                    Convert.ToString(dataRow["naziv"]), 
+                    Convert.ToInt32(dataRow["FilmId"]),
+                    Convert.ToString(dataRow["naziv"]),
                     Convert.ToInt32(dataRow["sifra"])
                 );
 
                 return film;
-            }  
-            
+            }
+
             // heh
             return null;
         }
@@ -91,12 +91,12 @@ namespace DAO
                 );
 
                 filmovi.Add(film);
-            }  
+            }
 
             return filmovi;
         }
 
 
-            
+
     }
 }

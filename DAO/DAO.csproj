@@ -53,6 +53,7 @@
     <Compile Include="ProjekcijaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RacunDAO.cs" />
+    <Compile Include="RadnaEvidencijaDAO.cs" />
     <Compile Include="RadnoVrijemeDAO.cs" />
     <Compile Include="RezervacijaDAO.cs" />
     <Compile Include="SalaDAO.cs" />
